@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.5.9003 (2025-06-08)
+
+## Chore
+
+- Format with air.
+
+## Documentation
+
+- Fix URL (@olivroy, #78).
+
+
 # utf8 1.2.5.9002 (2025-05-05)
 
 ## Documentation
