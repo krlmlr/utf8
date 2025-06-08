@@ -14,12 +14,6 @@
 
 - Fix URL (@olivroy, #78).
 
-- Update URL.
-
-## Uncategorized
-
-- Switching to development version.
-
 
 # utf8 1.2.5 (2025-05-01)
 
