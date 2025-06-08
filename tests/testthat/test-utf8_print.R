@@ -110,7 +110,10 @@ test_that("'utf8_print' can use the 'max' argument for named vectors", {
 
 test_that("'utf8_print' can print empty vectors", {
   expect_equal(capture_output(utf8_print(character())), "character(0)")
-  expect_equal(capture_output(utf8_print(array(character(), 0))), "character(0)")
+  expect_equal(
+    capture_output(utf8_print(array(character(), 0))),
+    "character(0)"
+  )
 })
 
 
@@ -181,7 +184,9 @@ test_that("'utf8_print' can print arrays", {
 
   x2 <- x
   dimnames(x2) <- list(
-    letters[1:2], letters[3:5], letters[6:9],
+    letters[1:2],
+    letters[3:5],
+    letters[6:9],
     letters[10:14]
   )
 
@@ -249,7 +254,10 @@ test_that("'utf8_print' can handle NA names", {
 
 
 test_that("'utf8_print' can right justify", {
-  x <- matrix(c("a", "ab", "abc"), 3, 1,
+  x <- matrix(
+    c("a", "ab", "abc"),
+    3,
+    1,
     dimnames = list(c("1", "2", "3"), "ch")
   )
   expect_equal(
@@ -269,10 +277,13 @@ test_that("'utf8_print' does not need a gap at the end", {
     x = paste0(rep("x", 10), collapse = ""),
     y = paste0(rep("y", w - 13 - 5 - 2), collapse = "")
   )
-  expect_equal(length(strsplit(
-    capture_output(utf8_print(x)),
-    "\n"
-  )[[1]]), 2)
+  expect_equal(
+    length(strsplit(
+      capture_output(utf8_print(x)),
+      "\n"
+    )[[1]]),
+    2
+  )
 })
 
 
@@ -300,21 +311,19 @@ test_that("'utf8_print' wraps correctly", {
   )
 
   expect_equal(
-    capture_output(utf8_print(d2[, c(2, 1, 3), drop = FALSE],
-      chars = 1000
-    )),
+    capture_output(utf8_print(d2[, c(2, 1, 3), drop = FALSE], chars = 1000)),
     capture_output(print(d2[, c(2, 1, 3), drop = FALSE]))
   )
 
   expect_equal(
-    capture_output(utf8_print(d2[, c(2, 3, 1), drop = FALSE],
-      chars = 1000
-    )),
+    capture_output(utf8_print(d2[, c(2, 3, 1), drop = FALSE], chars = 1000)),
     capture_output(print(d2[, c(2, 3, 1), drop = FALSE]))
   )
 
   d3 <- as.matrix(data.frame(
-    x = "X", y = "Y", z = "Z",
+    x = "X",
+    y = "Y",
+    z = "Z",
     row.names = paste(rep("x", w), collapse = ""),
     stringsAsFactors = FALSE
   ))
@@ -324,7 +333,9 @@ test_that("'utf8_print' wraps correctly", {
   )
 
   d4 <- as.matrix(data.frame(
-    x = "X", y = "Y", z = "Z",
+    x = "X",
+    y = "Y",
+    z = "Z",
     row.names = paste(rep("x", w - 1), collapse = ""),
     stringsAsFactors = FALSE
   ))
@@ -334,7 +345,9 @@ test_that("'utf8_print' wraps correctly", {
   )
 
   d5 <- as.matrix(data.frame(
-    x = "X", y = "Y", z = "Z",
+    x = "X",
+    y = "Y",
+    z = "Z",
     row.names = paste(rep("x", w + 1), collapse = ""),
     stringsAsFactors = FALSE
   ))
@@ -378,8 +391,13 @@ chartype_matrix <- function() {
 
   chars[9] <- paste0(
     "x\u00adx\u200bx\u200cx\u200dx\u200ex\u200f",
-    "x\u034fx\ufeffx", intToUtf8(0xE0001), "x",
-    intToUtf8(0xE0020), "x", intToUtf8(0xE01EF), "x"
+    "x\u034fx\ufeffx",
+    intToUtf8(0xE0001),
+    "x",
+    intToUtf8(0xE0020),
+    "x",
+    intToUtf8(0xE01EF),
+    "x"
   )
   desc[9] <- "Unicode ignorable"
 
@@ -390,9 +408,12 @@ chartype_matrix <- function() {
   desc[10] <- "Unicode mark"
 
   chars[11] <- paste0(
-    intToUtf8(0x1F600), intToUtf8(0x1F601),
-    intToUtf8(0x1F602), intToUtf8(0x1F603),
-    intToUtf8(0x1F604), intToUtf8(0x1F483)
+    intToUtf8(0x1F600),
+    intToUtf8(0x1F601),
+    intToUtf8(0x1F602),
+    intToUtf8(0x1F603),
+    intToUtf8(0x1F604),
+    intToUtf8(0x1F483)
   )
   desc[11] <- "Emoji"
 
@@ -435,11 +456,20 @@ test_that("'utf8_print' handles Unicode correctly", {
     "8  \\u0e00\\u2029 Unicode control   ",
     "9  xxxxxxxxxxxx Unicode ignorable ",
     paste0("10 ", x[10, "chars"], " Unicode mark      "),
-    paste0("11 ", paste(intToUtf8(0x1F600), intToUtf8(0x1F601),
-      intToUtf8(0x1F602), intToUtf8(0x1F603),
-      intToUtf8(0x1F604), intToUtf8(0x1F483), "",
-      sep = "\u200b"
-    ), " Emoji             "),
+    paste0(
+      "11 ",
+      paste(
+        intToUtf8(0x1F600),
+        intToUtf8(0x1F601),
+        intToUtf8(0x1F602),
+        intToUtf8(0x1F603),
+        intToUtf8(0x1F604),
+        intToUtf8(0x1F483),
+        "",
+        sep = "\u200b"
+      ),
+      " Emoji             "
+    ),
     "12 x\\U0010ffffx Unassigned        ",
     "13 \\xfd\\xfe\\xff Invalid           "
   )
@@ -455,10 +485,7 @@ test_that("'utf8_print' works in C locale", {
   # https://github.com/r-lib/testthat/issues/1285
   with_ctype("C", {
     actual <- strsplit(
-      capture_output(utf8_print(x,
-        chars = 1000,
-        quote = FALSE
-      )),
+      capture_output(utf8_print(x, chars = 1000, quote = FALSE)),
       "\n"
     )[[1]]
   })

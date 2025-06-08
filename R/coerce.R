@@ -12,7 +12,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-
 as_character_scalar <- function(name, value, utf8 = TRUE) {
   if (is.null(value)) {
     return(NULL)
@@ -26,8 +25,12 @@ as_character_scalar <- function(name, value, utf8 = TRUE) {
 
 
 as_character_vector <- function(name, value, utf8 = TRUE) {
-  if (!(is.null(value) || is.character(value) || is.factor(value) ||
-    all(is.na(value)))) {
+  if (
+    !(is.null(value) ||
+      is.character(value) ||
+      is.factor(value) ||
+      all(is.na(value)))
+  ) {
     stop(sprintf("'%s' must be text, a character vector, or NULL", name))
   }
   if (is.null(value)) {

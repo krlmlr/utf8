@@ -12,8 +12,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-
-
 #' Encode Character Object as for UTF-8 Printing
 #'
 #' Escape the strings in a character object, optionally adding quotes or

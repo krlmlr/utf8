@@ -12,7 +12,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-
 #' @rdname output_utf8
 #' @export
 output_ansi <- function() {
@@ -30,8 +29,6 @@ output_ansi <- function() {
 
   FALSE
 }
-
-
 
 
 #' Output Capabilities

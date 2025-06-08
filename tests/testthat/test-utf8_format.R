@@ -38,8 +38,16 @@ test_that(paste0("'format' can handle long text in Unicode locale"), {
 
   expect_snapshot(variant = variant, {
     raw <- c(
-      NA, "", "a", "ab", "foo", "food", "short text",
-      "\u6027", "\u6027\u6027", "\u6027?"
+      NA,
+      "",
+      "a",
+      "ab",
+      "foo",
+      "food",
+      "short text",
+      "\u6027",
+      "\u6027\u6027",
+      "\u6027?"
     )
     Encoding(raw) <- "UTF-8"
 
@@ -54,25 +62,49 @@ test_that(paste0("'format' can handle long text in Unicode locale"), {
 
 test_that("'format' can handle long text in UTF-8 locale, part 2", {
   raw <- c(
-    NA, "", "a", "\n", "ab", "foo", "food", "short text",
-    "\u6027", "\u6027\u6027", "\u6027?"
+    NA,
+    "",
+    "a",
+    "\n",
+    "ab",
+    "foo",
+    "food",
+    "short text",
+    "\u6027",
+    "\u6027\u6027",
+    "\u6027?"
   )
   short <- c(
-    NA, "", "a", "\u2026", "a\u2026", "f\u2026", "f\u2026",
-    "s\u2026", "\u2026", "\u2026", "\u2026"
+    NA,
+    "",
+    "a",
+    "\u2026",
+    "a\u2026",
+    "f\u2026",
+    "f\u2026",
+    "s\u2026",
+    "\u2026",
+    "\u2026",
+    "\u2026"
   )
   rshort <- c(
-    NA, "", "a", "\u2026", "\u2026b", "\u2026o", "\u2026d",
-    "\u2026t", "\u2026", "\u2026", "\u2026?"
+    NA,
+    "",
+    "a",
+    "\u2026",
+    "\u2026b",
+    "\u2026o",
+    "\u2026d",
+    "\u2026t",
+    "\u2026",
+    "\u2026",
+    "\u2026?"
   )
 
   local_ctype("UTF-8")
 
   expect_equal(
-    utf8_format(raw,
-      chars = 1, justify = "none",
-      na.encode = FALSE
-    ),
+    utf8_format(raw, chars = 1, justify = "none", na.encode = FALSE),
     format(short, justify = "none", na.encode = FALSE)
   )
 
@@ -87,10 +119,7 @@ test_that("'format' can handle long text in UTF-8 locale, part 2", {
   )
 
   expect_equal(
-    utf8_format(raw,
-      chars = 1, justify = "right",
-      na.encode = FALSE
-    ),
+    utf8_format(raw, chars = 1, justify = "right", na.encode = FALSE),
     format(rshort, justify = "right", na.encode = FALSE)
   )
 })
@@ -99,16 +128,36 @@ test_that("'format' can handle long text in UTF-8 locale, part 2", {
 test_that("'format' can handle long text in C locale", {
   #            6         7          8           9            10
   raw <- c(
-    "\u6027", "?\u6027", "\n\u6027", "?\n\u6027", "\u0001\u6027",
-    "\u6027?", "\u6027\n", "\u6027?\n", "\u6027\u0001"
+    "\u6027",
+    "?\u6027",
+    "\n\u6027",
+    "?\n\u6027",
+    "\u0001\u6027",
+    "\u6027?",
+    "\u6027\n",
+    "\u6027?\n",
+    "\u6027\u0001"
   )
   short <- c(
-    "\\u6027", "?\\u6027", "\\n\\u6027", "?\\n...", "\\u0001...",
-    "\\u6027?", "\\u6027\\n", "\\u6027?...", "\\u6027..."
+    "\\u6027",
+    "?\\u6027",
+    "\\n\\u6027",
+    "?\\n...",
+    "\\u0001...",
+    "\\u6027?",
+    "\\u6027\\n",
+    "\\u6027?...",
+    "\\u6027..."
   )
   rshort <- c(
-    "\\u6027", "?\\u6027", "\\n\\u6027", "...\\n\\u6027",
-    "...\\u6027", "\\u6027?", "\\u6027\\n", "...?\\n",
+    "\\u6027",
+    "?\\u6027",
+    "\\n\\u6027",
+    "...\\n\\u6027",
+    "...\\u6027",
+    "\\u6027?",
+    "\\u6027\\n",
+    "...?\\n",
     "...\\u0001"
   )
 
@@ -298,12 +347,11 @@ test_that("'format' can set minimum width", {
 
 
 test_that("'format' error for invalid justify", {
-  expect_error(utf8_format("", justify = "wild"),
+  expect_error(
+    utf8_format("", justify = "wild"),
     paste(
       "'justify' must be one of the following:",
-      paste(dQuote(c("left", "right", "centre", "none")),
-        collapse = ", "
-      )
+      paste(dQuote(c("left", "right", "centre", "none")), collapse = ", ")
     ),
     fixed = TRUE
   )
@@ -311,10 +359,13 @@ test_that("'format' error for invalid justify", {
 
 
 test_that("'format' error for invalid logicals", {
-  expect_error(utf8_format("", trim = NA), "'trim' must be TRUE or FALSE",
+  expect_error(
+    utf8_format("", trim = NA),
+    "'trim' must be TRUE or FALSE",
     fixed = TRUE
   )
-  expect_error(utf8_format("", na.encode = NA),
+  expect_error(
+    utf8_format("", na.encode = NA),
     "'na.encode' must be TRUE or FALSE",
     fixed = TRUE
   )
@@ -322,11 +373,13 @@ test_that("'format' error for invalid logicals", {
 
 
 test_that("'format' error for invalid integers", {
-  expect_error(utf8_format("", chars = "3"),
+  expect_error(
+    utf8_format("", chars = "3"),
     "'chars' must be integer-valued",
     fixed = TRUE
   )
-  expect_error(utf8_format("", width = "3"),
+  expect_error(
+    utf8_format("", width = "3"),
     "'width' must be integer-valued",
     fixed = TRUE
   )

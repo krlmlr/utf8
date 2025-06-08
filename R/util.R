@@ -12,12 +12,12 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-
 with_rethrow <- function(expr) {
   parentcall <- sys.call(-1)
   eval(
     envir = parent.frame(),
-    withCallingHandlers(expr,
+    withCallingHandlers(
+      expr,
       error = function(e, call = parentcall) {
         e$call <- call
         stop(e)

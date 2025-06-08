@@ -12,8 +12,6 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-
-
 #' UTF-8 Text Formatting
 #'
 #' Format a character object for UTF-8 printing.
@@ -131,7 +129,17 @@ utf8_format <- function(
   }
 
   .Call(
-    rutf8_utf8_format, x, trim, chars, justify, width, na.encode,
-    quote, na.print, ellipsis, wellipsis, utf8
+    rutf8_utf8_format,
+    x,
+    trim,
+    chars,
+    justify,
+    width,
+    na.encode,
+    quote,
+    na.print,
+    ellipsis,
+    wellipsis,
+    utf8
   )
 }

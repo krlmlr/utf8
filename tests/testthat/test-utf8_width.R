@@ -2,9 +2,7 @@ test_that("'utf8_width' computes widths correctly", {
   local_ctype("UTF-8")
 
   expect_equal(
-    utf8_width(c("hello", "\u200b", "\u22ee", "\u6027"),
-      encode = FALSE
-    ),
+    utf8_width(c("hello", "\u200b", "\u22ee", "\u6027"), encode = FALSE),
     c(5, 0, 1, 2)
   )
 })
@@ -16,8 +14,6 @@ test_that("'utf8_width' computes widths for extended unicode correctly", {
 
   expect_equal(utf8_width(intToUtf8(0x1f642), encode = FALSE), 2)
 })
-
-
 
 
 test_that("'utf8_width' gives NA for non-ASCII in C locale", {
@@ -42,9 +38,7 @@ test_that("'utf8_width' keeps names", {
 
 test_that("'utf8_width' gives NA for control characters", {
   expect_equal(
-    utf8_width(c("\u0001", "\a", "new\nline"),
-      encode = FALSE
-    ),
+    utf8_width(c("\u0001", "\a", "new\nline"), encode = FALSE),
     c(NA_integer_, NA_integer_, NA_integer_)
   )
 })

@@ -12,9 +12,7 @@
 #  See the License for the specific language governing permissions and
 #  limitations under the License.
 
-
 # converts a character vector from its declared encoding to UTF-8
-
 
 #' UTF-8 Character Encoding
 #'
@@ -73,7 +71,6 @@ utf8_valid <- function(x) {
 
 # gets the width; NA for invalid or nonprintable sequences
 
-
 #' Measure the Character String Width
 #'
 #' Compute the display widths of the elements of a character object.
@@ -129,7 +126,6 @@ utf8_width <- function(
 }
 
 
-
 #' Text Normalization
 #'
 #' Transform text to normalized form, optionally mapping to lowercase and
@@ -180,7 +176,11 @@ utf8_normalize <- function(
   })
 
   .Call(
-    rutf8_utf8_normalize, x, map_case, map_compat, map_quote,
+    rutf8_utf8_normalize,
+    x,
+    map_case,
+    map_compat,
+    map_quote,
     remove_ignorable
   )
 }
