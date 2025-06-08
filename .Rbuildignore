@@ -26,3 +26,5 @@
 ^src/\.editorconfig$
 ^revdep$
 ^index\.md$
+^[\.]?air\.toml$
+^\.vscode$
