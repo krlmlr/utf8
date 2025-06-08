@@ -40,14 +40,14 @@ For a complete list of functions, use \code{library(help = "utf8")}.
 \seealso{
 Useful links:
 \itemize{
-  \item \url{https://ptrckprry.com/r-utf8/}
-  \item \url{https://github.com/krlmlr/r-utf8}
-  \item Report bugs at \url{https://github.com/krlmlr/r-utf8/issues}
+  \item \url{https://krlmlr.github.io/utf8/}
+  \item \url{https://github.com/krlmlr/utf8}
+  \item Report bugs at \url{https://github.com/krlmlr/utf8/issues}
 }
 
 }
 \author{
-\strong{Maintainer}: Kirill Müller \email{kirill@cynkra.com}
+\strong{Maintainer}: Kirill Müller \email{kirill@cynkra.com} (\href{https://orcid.org/0000-0002-1416-3412}{ORCID})
 
 Authors:
 \itemize{
