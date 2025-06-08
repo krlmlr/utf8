@@ -5,7 +5,7 @@
 
 <!-- badges: start -->
 
-[![rcc](https://github.com/patperry/r-utf8/workflows/rcc/badge.svg)](https://github.com/patperry/r-utf8/actions)
+[![rcc](https://github.com/patperry/r-utf8/workflows/rcc/badge.svg)](https://github.com/krlmlr/utf8/actions)
 [![Coverage
 Status](https://codecov.io/github/patperry/r-utf8/coverage.svg?branch=main "Code Coverage")](https://app.codecov.io/github/patperry/r-utf8?branch=main "Code Coverage")
 [![CRAN
@@ -123,10 +123,10 @@ If you’d like to contribute, either
 
 - fork the repository and submit a pull request
 
-- [file an issue](https://github.com/patperry/r-utf8/issues "Issues");
+- [file an issue](https://github.com/krlmlr/utf8/issues "Issues");
 
 - or contact the maintainer via e-mail.
 
 This project is released with a [Contributor Code of
-Conduct](https://github.com/patperry/r-utf8/blob/main/CONDUCT.md "Contributor Code of Conduct"),
+Conduct](https://github.com/krlmlr/utf8/blob/main/CONDUCT.md "Contributor Code of Conduct"),
 and if you choose to contribute, you must adhere to its terms.

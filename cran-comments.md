@@ -1,4 +1,4 @@
-utf8 1.2.5
+utf8 1.2.6
 
 ## Cran Repository Policy
 
