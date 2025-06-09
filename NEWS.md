@@ -1,5 +1,10 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9000 (2025-06-09)
+
+- Switching to development version.
+
+
 # utf8 1.2.6 (2025-06-08)
 
 ## Chore
