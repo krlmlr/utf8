@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9001 (2025-06-13)
+
+## Continuous integration
+
+- Try to break R 4.1 builds by adding configure.win.
+
+
 # utf8 1.2.6.9000 (2025-06-09)
 
 - Switching to development version.
