@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9002 (2025-08-05)
+
+## Continuous integration
+
+- Format with air, check detritus, better handling of `extra-packages` (#82).
+
+
 # utf8 1.2.6.9001 (2025-06-13)
 
 ## Continuous integration
