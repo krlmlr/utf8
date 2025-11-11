@@ -1,5 +1,11 @@
 # Changelog
 
+## utf8 1.2.6.9004 (2025-11-10)
+
+### Continuous integration
+
+- Sync ([\#86](https://github.com/krlmlr/utf8/issues/86)).
+
 ## utf8 1.2.6.9003 (2025-09-05)
 
 ### Chore
