@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9005 (2025-11-12)
+
+## Continuous integration
+
+- Fix reviewdog and add commenting workflow (#88).
+
+
 # utf8 1.2.6.9004 (2025-11-10)
 
 ## Continuous integration
