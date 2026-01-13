@@ -15,13 +15,13 @@
 Source:
 [`DESCRIPTION`](https://github.com/krlmlr/utf8/blob/main/DESCRIPTION)
 
-Perry PO (2025). *utf8: Unicode Text Processing*. R package version
-1.2.6.9005, <https://krlmlr.github.io/utf8/>.
+Perry PO (2026). *utf8: Unicode Text Processing*. R package version
+1.2.6.9006, <https://krlmlr.github.io/utf8/>.
 
     @Manual{,
       title = {utf8: Unicode Text Processing},
       author = {Patrick O. Perry},
-      year = {2025},
-      note = {R package version 1.2.6.9005},
+      year = {2026},
+      note = {R package version 1.2.6.9006},
       url = {https://krlmlr.github.io/utf8/},
     }
