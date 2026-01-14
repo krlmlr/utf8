@@ -1,5 +1,16 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9007 (2026-01-14)
+
+## Continuous integration
+
+- Fix comment (#94).
+
+- Tweaks (#93).
+
+- Test all R versions on branches that start with cran- (#92).
+
+
 # utf8 1.2.6.9006 (2025-11-17)
 
 ## Continuous integration
