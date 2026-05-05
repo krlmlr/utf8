@@ -62,6 +62,7 @@ in the user's locale never get escaped; others will get output as
 ## Examples
 
 ``` r
+
 # test whether ANSI style escapes or UTF-8 output are supported
 cat("ANSI:", output_ansi(), "\n")
 #> ANSI: FALSE 

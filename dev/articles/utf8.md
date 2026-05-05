@@ -26,6 +26,7 @@ Gutenberg](http://www.gutenberg.org). We will download the text, then
 read in the lines of the novel.
 
 ``` r
+
 # download the zipped text from a Project Gutenberg mirror
 url <-  "http://mirror.csclub.uwaterloo.ca/gutenberg/1/4/141/141.zip"
 tmp <- tempfile()
@@ -49,6 +50,7 @@ informative, and could correspond to any encoding. However, if we read
 the first few lines of the file, we see the following:
 
 ``` r
+
 lines[11:20]
 ```
 
@@ -70,6 +72,7 @@ Unfortunately, we run into trouble as soon as we try to process the
 text:
 
 ``` r
+
 corpus::term_stats(lines) # produces an error
 ```
 
@@ -78,6 +81,7 @@ corpus::term_stats(lines) # produces an error
 The error message tells us that line 15252 contains an invalid byte.
 
 ``` r
+
 lines[15252]
 ```
 
@@ -87,6 +91,7 @@ We might wonder if there are other lines with invalid data. We can find
 all such lines using the `utf8_valid` function:
 
 ``` r
+
 lines[!utf8_valid(lines)]
 ```
 
@@ -111,6 +116,7 @@ Information Interchange. Here are the characters corresponding to these
 codes:
 
 ``` r
+
 codes <- matrix(0:127, 8, 16, byrow = TRUE,
                 dimnames = list(0:7, c(0:9, letters[1:6])))
 ascii <- apply(codes, c(1, 2), intToUtf8)
@@ -145,6 +151,7 @@ hexadecimal digits `XXXX` or as `\UXXXXYYYY` for eight hexadecimal
 digits `XXXXYYYY`:
 
 ``` r
+
 utf8_print(intToUtf8(1:0x0f), quote = FALSE)
 ```
 
@@ -154,6 +161,7 @@ Compare `utf8_print` output with the output with the base R print
 function:
 
 ``` r
+
 print(intToUtf8(1:0x0f), quote = FALSE)
 ```
 
@@ -171,6 +179,7 @@ numbers 128 to 255 (hexadecimal 0x80 to 0xff) to other common characters
 in Latin languages. We can see these characters below.
 
 ``` r
+
 codes <- matrix(128:255, 8, 16, byrow = TRUE,
                 dimnames = list(c(8:9, letters[1:6]), c(0:9, letters[1:6])))
 latin1 <- apply(codes, c(1, 2), intToUtf8)
@@ -197,6 +206,7 @@ from *Mansfield Park*, corresponds to a pound sign in the Latin-1
 encoding. Given the context of the byte:
 
 ``` r
+
 lines[15252]
 ```
 
@@ -211,6 +221,7 @@ possibility, and there are many other encodings. The `iconvlist`
 function will list the ones that R knows how to process:
 
 ``` r
+
 head(iconvlist(), n = 20)
 ```
 
@@ -236,18 +247,21 @@ Say you want to input the Unicode character with hexadecimal code
 0x2603. You can do so in one of three ways:
 
 ``` r
+
 "\u2603"           # with \u + 4 hex digits
 ```
 
     [1] "☃"
 
 ``` r
+
 "\U00002603"       # with \U + 8 hex digits
 ```
 
     [1] "☃"
 
 ``` r
+
 intToUtf8(0x2603)  # from an integer
 ```
 
@@ -266,18 +280,21 @@ most emoji. The `utf8_print` function uses the most recent version
 supported by your system:
 
 ``` r
+
 print(intToUtf8(0x1f600 + 0:79)) # base R
 ```
 
     [1] "\U0001f600\U0001f601\U0001f602\U0001f603\U0001f604\U0001f605\U0001f606\U0001f607\U0001f608\U0001f609\U0001f60a\U0001f60b\U0001f60c\U0001f60d\U0001f60e\U0001f60f\U0001f610\U0001f611\U0001f612\U0001f613\U0001f614\U0001f615\U0001f616\U0001f617\U0001f618\U0001f619\U0001f61a\U0001f61b\U0001f61c\U0001f61d\U0001f61e\U0001f61f\U0001f620\U0001f621\U0001f622\U0001f623\U0001f624\U0001f625\U0001f626\U0001f627\U0001f628\U0001f629\U0001f62a\U0001f62b\U0001f62c\U0001f62d\U0001f62e\U0001f62f\U0001f630\U0001f631\U0001f632\U0001f633\U0001f634\U0001f635\U0001f636\U0001f637\U0001f638\U0001f639\U0001f63a\U0001f63b\U0001f63c\U0001f63d\U0001f63e\U0001f63f\U0001f640\U0001f641\U0001f642\U0001f643\U0001f644\U0001f645\U0001f646\U0001f647\U0001f648\U0001f649\U0001f64a\U0001f64b\U0001f64c\U0001f64d\U0001f64e\U0001f64f"
 
 ``` r
+
 utf8_print(intToUtf8(0x1f600 + 0:79)) # truncates to line width
 ```
 
     [1] "😀​😁​😂​😃​😄​😅​😆​😇​😈​😉​😊​😋​😌​😍​😎​😏​😐​😑​😒​😓​😔​😕​😖​😗​😘​😙​😚​😛​😜​😝​😞​😟​😠​😡​😢​😣​…"
 
 ``` r
+
 utf8_print(intToUtf8(0x1f600 + 0:79), chars = 500) # increase character limit
 ```
 
@@ -326,6 +343,7 @@ Back to our original problem: getting the text of *Mansfield Park* into
 R. Our first attempt failed:
 
 ``` r
+
 corpus::term_stats(lines)
 ```
 
@@ -334,6 +352,7 @@ corpus::term_stats(lines)
 We discovered a problem on line 15252:
 
 ``` r
+
 lines[15252]
 ```
 
@@ -345,6 +364,7 @@ Latin-1 to UTF-8 with the [`iconv()`](https://rdrr.io/r/base/iconv.html)
 function and inspecting the output:
 
 ``` r
+
 lines2 <- iconv(lines, "latin1", "UTF-8")
 lines2[15252]
 ```
@@ -354,6 +374,7 @@ lines2[15252]
 It worked! Now we can analyze our text.
 
 ``` r
+
 f <- corpus::text_filter(drop_punct = TRUE, drop = corpus::stopwords_en)
 corpus::term_stats(lines2, f)
 ```

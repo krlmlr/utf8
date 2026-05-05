@@ -12,6 +12,7 @@ CRAN](https://cran.r-project.org/package=utf8 "CRAN Page"). To install
 the latest released version, run the following command in R:
 
 ``` r
+
 install.packages("utf8")
 ```
 
@@ -20,12 +21,14 @@ install.packages("utf8")
 To install the latest development version, run the following:
 
 ``` r
+
 devtools::install_github("patperry/r-utf8")
 ```
 
 ## Usage
 
 ``` r
+
 library(utf8)
 ```
 
@@ -37,6 +40,7 @@ to validate input text and convert to UTF-8 encoding. The function
 alerts you if the input text has the wrong declared encoding:
 
 ``` r
+
 # second entry is encoded in latin-1, but declared as UTF-8
 x <- c("fa\u00E7ile", "fa\xE7ile", "fa\xC3\xA7ile")
 Encoding(x) <- c("UTF-8", "UTF-8", "bytes")
@@ -57,6 +61,7 @@ to convert to Unicode composed normal form (NFC). Optionally apply
 compatibility maps for NFKC normal form or case-fold.
 
 ``` r
+
 # three ways to encode an angstrom character
 (angstrom <- c("\u00c5", "\u0041\u030a", "\u212b"))
 #> [1] "Å" "Å" "Å"
@@ -83,6 +88,7 @@ of the Unicode standard to determine which characters are printable. Use
 for an updated print function:
 
 ``` r
+
 print(intToUtf8(0xdeadbeefF600 + 0:79)) # with default R print function
 #> [1] "😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏"
 

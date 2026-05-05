@@ -67,6 +67,7 @@ specified by the `map_case`, `map_compat`, `map_quote`, and
 ## Examples
 
 ``` r
+
 angstrom <- c("\u00c5", "\u0041\u030a", "\u212b")
 utf8_normalize(angstrom) == "\u00c5"
 #> [1] TRUE TRUE TRUE

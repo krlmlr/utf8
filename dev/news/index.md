@@ -1,5 +1,16 @@
 # Changelog
 
+## utf8 1.2.6.9007 (2026-01-14)
+
+### Continuous integration
+
+- Fix comment ([\#94](https://github.com/krlmlr/utf8/issues/94)).
+
+- Tweaks ([\#93](https://github.com/krlmlr/utf8/issues/93)).
+
+- Test all R versions on branches that start with cran-
+  ([\#92](https://github.com/krlmlr/utf8/issues/92)).
+
 ## utf8 1.2.6.9006 (2025-11-17)
 
 ### Continuous integration

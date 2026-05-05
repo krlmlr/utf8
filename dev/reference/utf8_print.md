@@ -125,6 +125,7 @@ and `names` parameters, specifying an ANSI SGR parameter string; see
 ## Examples
 
 ``` r
+
 # printing (assumes that output is capable of displaying Unicode 10.0.0)
 print(intToUtf8(0x1F600 + 0:79)) # with default R print function
 #> [1] "😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏"
