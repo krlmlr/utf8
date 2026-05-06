@@ -1,5 +1,22 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9008 (2026-05-06)
+
+## Chore
+
+- Auto-update from GitHub Actions (#96).
+
+## Continuous integration
+
+- Cosmetics.
+
+- Bump action versions.
+
+- Install clang-format-21.
+
+- Align fledge workflow.
+
+
 # utf8 1.2.6.9007 (2026-01-14)
 
 ## Continuous integration
