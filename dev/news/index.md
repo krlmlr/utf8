@@ -1,5 +1,30 @@
 # Changelog
 
+## utf8 1.2.6.9009 (2026-05-13)
+
+### Continuous integration
+
+- Only run fledge on pushes to main.
+
+- Tweak fledge workflow and ccache action.
+
+## utf8 1.2.6.9008 (2026-05-06)
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#96](https://github.com/krlmlr/utf8/issues/96)).
+
+### Continuous integration
+
+- Cosmetics.
+
+- Bump action versions.
+
+- Install clang-format-21.
+
+- Align fledge workflow.
+
 ## utf8 1.2.6.9007 (2026-01-14)
 
 ### Continuous integration
