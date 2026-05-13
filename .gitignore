@@ -11,3 +11,4 @@
 CRAN-RELEASE
 /.cache/
 /compile_commands.json
+.ccache/
