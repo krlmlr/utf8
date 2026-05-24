@@ -50,7 +50,7 @@ const char *rutf8_as_style(SEXP style)
 	PROTECT(elt = STRING_ELT(style, 0));
 
 	n = LENGTH(elt);
-	ans = R_alloc(2 + n + 2, 1);
+	ans = R_alloc((size_t)2 + (size_t)n + 2, 1);
 
 	ans[0] = '\033';
 	ans[1] = '[';
