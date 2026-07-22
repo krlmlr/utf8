@@ -1,5 +1,19 @@
 # Changelog
 
+## utf8 1.2.6.9012 (2026-05-24)
+
+### Continuous integration
+
+- Update ccache-action reference.
+
+- Bump action version.
+
+## utf8 1.2.6.9011 (2026-05-16)
+
+### Continuous integration
+
+- Sync ([\#86](https://github.com/krlmlr/utf8/issues/86)).
+
 ## utf8 1.2.6.9010 (2026-05-14)
 
 ### Chore
