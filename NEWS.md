@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9014 (2026-07-24)
+
+## Bug fixes
+
+### ci
+
+- Emit empty package matrix when there are no (rev)deps.
+
+## Continuous integration
+
+- Tweaks (#93).
+
+
 # utf8 1.2.6.9013 (2026-07-22)
 
 ## Continuous integration
