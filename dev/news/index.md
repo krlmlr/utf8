@@ -1,5 +1,11 @@
 # Changelog
 
+## utf8 1.2.6.9015 (2026-07-25)
+
+### Continuous integration
+
+- Lock down `format-suggest` egress (audit → block).
+
 ## utf8 1.2.6.9014 (2026-07-24)
 
 ### Bug fixes
