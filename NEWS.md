@@ -1,5 +1,18 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9016 (2026-07-28)
+
+## Chore
+
+- Auto-update from GitHub Actions (#96).
+
+## fledge
+
+- Bump version to 1.2.6.9008 (#97).
+
+- Bump version to 1.2.6.9007 (#95).
+
+
 # utf8 1.2.6.9015 (2026-07-25)
 
 ## Continuous integration
