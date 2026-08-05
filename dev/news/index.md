@@ -1,5 +1,27 @@
 # Changelog
 
+## utf8 1.2.6.9017 (2026-08-05)
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#102](https://github.com/krlmlr/utf8/issues/102)).
+
+- Auto-update from GitHub Actions
+  ([\#99](https://github.com/krlmlr/utf8/issues/99)).
+
+- Auto-update from GitHub Actions
+  ([\#111](https://github.com/krlmlr/utf8/issues/111)).
+
+### Continuous integration
+
+- Remove unused pr-commands workflow.
+
+### fledge
+
+- Bump version to 1.2.6.9010
+  ([\#103](https://github.com/krlmlr/utf8/issues/103)).
+
 ## utf8 1.2.6.9016 (2026-07-28)
 
 ### Chore
