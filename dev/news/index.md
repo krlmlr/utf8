@@ -1,5 +1,21 @@
 # Changelog
 
+## utf8 1.2.6.9018 (2026-08-06)
+
+### Continuous integration
+
+- Add sharded `revdep2` workflow.
+
+### fledge
+
+- Bump version to 1.2.6.9012
+  ([\#105](https://github.com/krlmlr/utf8/issues/105)).
+
+### Uncategorized
+
+- Ci: Harden `workflow_run` workflows against untrusted pull requests
+  ([\#106](https://github.com/krlmlr/utf8/issues/106)).
+
 ## utf8 1.2.6.9017 (2026-08-05)
 
 ### Chore
