@@ -1,5 +1,13 @@
 # Changelog
 
+## utf8 1.2.6.9020 (2026-09-05)
+
+### Bug fixes
+
+#### ci
+
+- Backport kit fixes from `rigraph`, `duckdb-r` and `dm`.
+
 ## utf8 1.2.6.9019 (2026-08-08)
 
 ### Continuous integration
