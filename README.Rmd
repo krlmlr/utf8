@@ -76,7 +76,7 @@ install.packages("utf8")
 To install the latest development version, run the following:
 
 ```r
-devtools::install_github("patperry/r-utf8")
+pak::pak("patperry/r-utf8")
 ```
 
 
