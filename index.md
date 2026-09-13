@@ -1,31 +1,27 @@
 
 <!-- README.md and index.md are generated from README.Rmd. Please edit that file. -->
 
-
-
-
 # utf8
 
 <!-- badges: start -->
-[![rcc](https://github.com/patperry/r-utf8/workflows/rcc/badge.svg)](https://github.com/patperry/r-utf8/actions)
-[![Coverage Status][codecov-badge]][codecov]
-[![CRAN Status][cran-badge]][cran]
-[![License][apache-badge]][apache]
-[![CRAN RStudio Mirror Downloads][cranlogs-badge]][cran]
+
+[![rcc](https://github.com/patperry/r-utf8/workflows/rcc/badge.svg)](https://github.com/krlmlr/utf8/actions)
+[![Coverage Status](https://codecov.io/github/patperry/r-utf8/coverage.svg?branch=main "Code Coverage")](https://app.codecov.io/github/patperry/r-utf8?branch=main "Code Coverage")
+[![CRAN Status](https://www.r-pkg.org/badges/version/utf8 "CRAN Page")](https://cran.r-project.org/package=utf8 "CRAN Page")
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg "Apache License, Version 2.0")](https://www.apache.org/licenses/LICENSE-2.0.html "Apache License, Version 2.0")
+[![CRAN RStudio Mirror Downloads](https://cranlogs.r-pkg.org/badges/utf8 "CRAN Downloads")](https://cran.r-project.org/package=utf8 "CRAN Page")
 <!-- badges: end -->
 
-
 *utf8* is an R package for manipulating and printing UTF-8 text that fixes multiple bugs in R's UTF-8 handling.
-
 
 ## Installation
 
 ### Stable version
 
-*utf8* is [available on CRAN][cran]. To install the latest released version,
+*utf8* is [available on CRAN](https://cran.r-project.org/package=utf8 "CRAN Page"). To install the latest released version,
 run the following command in R:
 
-```r
+``` r
 install.packages("utf8")
 ```
 
@@ -33,13 +29,12 @@ install.packages("utf8")
 
 To install the latest development version, run the following:
 
-```r
-devtools::install_github("patperry/r-utf8")
+``` r
+# install.packages("pak")
+pak::pak("patperry/r-utf8")
 ```
 
-
 ## Usage
-
 
 ``` r
 library(utf8)
@@ -50,13 +45,13 @@ library(utf8)
 Use `as_utf8()` to validate input text and convert to UTF-8 encoding. The
 function alerts you if the input text has the wrong declared encoding:
 
-
 ``` r
 # second entry is encoded in latin-1, but declared as UTF-8
 x <- c("fa\u00E7ile", "fa\xE7ile", "fa\xC3\xA7ile")
 Encoding(x) <- c("UTF-8", "UTF-8", "bytes")
 as_utf8(x) # fails
-#> Error in as_utf8(x): entry 2 has wrong Encoding; marked as "UTF-8" but leading byte 0xE7 followed by invalid continuation byte (0xdeadbeef) at position 4
+#> [1m[33mError[39m in `as_utf8()`:[22m
+#> [33m![39m entry 2 has wrong Encoding; marked as "UTF-8" but leading byte 0xE7 followed by invalid continuation byte (0xdeadbeef) at position 4
 
 # mark the correct encoding
 Encoding(x[2]) <- "latin1"
@@ -68,7 +63,6 @@ as_utf8(x) # succeeds
 
 Use `utf8_normalize()` to convert to Unicode composed normal form (NFC).
 Optionally apply compatibility maps for NFKC normal form or case-fold.
-
 
 ``` r
 # three ways to encode an angstrom character
@@ -94,7 +88,6 @@ On some platforms (including MacOS), the R implementation of `print()` uses an
 outdated version of the Unicode standard to determine which characters are
 printable. Use `utf8_print()` for an updated print function:
 
-
 ``` r
 print(intToUtf8(0xdeadbeefF600 + 0:79)) # with default R print function
 #> [1] "😀😁😂😃😄😅😆😇😈😉😊😋😌😍😎😏😐😑😒😓😔😕😖😗😘😙😚😛😜😝😞😟😠😡😢😣😤😥😦😧😨😩😪😫😬😭😮😯😰😱😲😳😴😵😶😷😸😹😺😻😼😽😾😿🙀🙁🙂🙃🙄🙅🙆🙇🙈🙉🙊🙋🙌🙍🙎🙏"
@@ -106,45 +99,13 @@ utf8_print(intToUtf8(0xdeadbeefF600 + 0:79), chars = 1000) # higher character li
 #> [1] "😀​😁​😂​😃​😄​😅​😆​😇​😈​😉​😊​😋​😌​😍​😎​😏​😐​😑​😒​😓​😔​😕​😖​😗​😘​😙​😚​😛​😜​😝​😞​😟​😠​😡​😢​😣​😤​😥​😦​😧​😨​😩​😪​😫​😬​😭​😮​😯​😰​😱​😲​😳​😴​😵​😶​😷​😸​😹​😺​😻​😼​😽​😾​😿​🙀​🙁​🙂​🙃​🙄​🙅​🙆​🙇​🙈​🙉​🙊​🙋​🙌​🙍​🙎​🙏​"
 ```
 
-
 ## Citation
 
 Cite *utf8* with the following BibTeX entry:
 
-
-```
-@Manual{,
-  title = {utf8: Unicode Text Processing},
-  author = {Patrick O. Perry},
-  note = {R package version 1.2.4.9900, https://github.com/patperry/r-utf8},
-  url = {https://ptrckprry.com/r-utf8/},
-}
-```
-
-
-## Contributing
-
-The project maintainer welcomes contributions in the form of feature requests,
-bug reports, comments, unit tests, vignettes, or other code.  If you'd like to
-contribute, either
-
-- fork the repository and submit a pull request
-
-- [file an issue][issues];
-
-- or contact the maintainer via e-mail.
-
-This project is released with a [Contributor Code of Conduct][conduct],
-and if you choose to contribute, you must adhere to its terms.
-
-
-[apache]: https://www.apache.org/licenses/LICENSE-2.0.html "Apache License, Version 2.0"
-[apache-badge]: https://img.shields.io/badge/License-Apache%202.0-blue.svg "Apache License, Version 2.0"
-[building]: #development-version "Building from Source"
-[codecov]: https://app.codecov.io/github/patperry/r-utf8?branch=main "Code Coverage"
-[codecov-badge]: https://codecov.io/github/patperry/r-utf8/coverage.svg?branch=main "Code Coverage"
-[conduct]: https://github.com/patperry/r-utf8/blob/main/CONDUCT.md "Contributor Code of Conduct"
-[cran]: https://cran.r-project.org/package=utf8 "CRAN Page"
-[cran-badge]: https://www.r-pkg.org/badges/version/utf8 "CRAN Page"
-[cranlogs-badge]: https://cranlogs.r-pkg.org/badges/utf8 "CRAN Downloads"
-[issues]: https://github.com/patperry/r-utf8/issues "Issues"
+    @Manual{,
+      title = {utf8: Unicode Text Processing},
+      author = {Patrick O. Perry},
+      note = {R package version 1.2.6.9020},
+      url = {https://krlmlr.github.io/utf8/},
+    }
