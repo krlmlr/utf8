@@ -16,49 +16,37 @@
 #'
 #' Print a UTF-8 character object.
 #'
-#' `utf8_print()` prints a character object after formatting it with
-#' [utf8_format()].
+#' `utf8_print()` prints a character object after formatting it with [utf8_format()].
 #'
-#' For ANSI terminal output (when `output_ansi()` is `TRUE`), you can
-#' style the row and column names with the `rownames` and `names`
-#' parameters, specifying an ANSI SGR parameter string; see
-#' <https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters>.
+#' For ANSI terminal output (when `output_ansi()` is `TRUE`),
+#' you can style the row and column names with the `rownames` and `names` parameters, specifying an ANSI SGR parameter string;
+#' see <https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters>.
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
 #' @param chars integer scalar indicating the maximum number of character units
-#'   to display.  Wide characters like emoji take two character units; combining
-#'   marks and default ignorables take none. Longer strings get truncated and
-#'   suffixed or prefixed with an ellipsis (`"..."` in C locale,
-#'   `"\u2026"` in others). Set to `NULL` to limit output to the line
-#'   width as determined by `getOption("width")`.
-#' @param quote logical scalar indicating whether to put surrounding
-#'   double-quotes (`'"'`) around character strings and escape internal
-#'   double-quotes.
-#' @param na.print character string (or `NULL`) indicating the encoding
-#'   for `NA` values. Ignored when `na.encode` is `FALSE`.
-#' @param print.gap non-negative integer (or `NULL`) giving the number of
-#'   spaces in gaps between columns; set to `NULL` or `1` for a single
-#'   space.
-#' @param right logical scalar indicating whether to right-justify character
-#'   strings.
-#' @param max non-negative integer (or `NULL`) indicating the maximum
-#'   number of elements to print; set to `getOption("max.print")` if
-#'   argument is `NULL`.
-#' @param names a character string specifying the display style for the
-#'   (column) names, as an ANSI SGR parameter string.
-#' @param rownames a character string specifying the display style for the row
-#'   names, as an ANSI SGR parameter string.
-#' @param escapes a character string specifying the display style for the
-#'   backslash escapes, as an ANSI SGR parameter string.
-#' @param display logical scalar indicating whether to optimize the encoding
-#'   for display, not byte-for-byte data transmission.
-#' @param style logical scalar indicating whether to apply ANSI terminal escape
-#'   codes to style the output.  Ignored when `output_ansi()` is
-#'   `FALSE`.
-#' @param utf8 logical scalar indicating whether to optimize results for a
-#'   UTF-8 capable display, or `NULL` to set as the result of
-#'   `output_utf8()`. Ignored when `output_utf8()` is `FALSE`.
+#'   to display.  Wide characters like emoji take two character units;
+#'   combining marks and default ignorables take none.
+#'   Longer strings get truncated and suffixed or prefixed with an ellipsis (`"..."` in C locale, `"\u2026"` in others).
+#'   Set to `NULL` to limit output to the line width as determined by `getOption("width")`.
+#' @param quote logical scalar indicating whether to put surrounding double-quotes (`'"'`) around character strings
+#'   and escape internal double-quotes.
+#' @param na.print character string (or `NULL`) indicating the encoding for `NA` values.
+#'   Ignored when `na.encode` is `FALSE`.
+#' @param print.gap non-negative integer (or `NULL`) giving the number of spaces in gaps between columns;
+#'   set to `NULL` or `1` for a single space.
+#' @param right logical scalar indicating whether to right-justify character strings.
+#' @param max non-negative integer (or `NULL`) indicating the maximum number of elements to print;
+#'   set to `getOption("max.print")` if argument is `NULL`.
+#' @param names a character string specifying the display style for the (column) names, as an ANSI SGR parameter string.
+#' @param rownames a character string specifying the display style for the row names, as an ANSI SGR parameter string.
+#' @param escapes a character string specifying the display style for the backslash escapes, as an ANSI SGR parameter string.
+#' @param display logical scalar indicating whether to optimize the encoding for display, not byte-for-byte data transmission.
+#' @param style logical scalar indicating whether to apply ANSI terminal escape codes
+#'   to style the output.  Ignored when `output_ansi()` is `FALSE`.
+#' @param utf8 logical scalar indicating whether to optimize results for a UTF-8 capable display,
+#'   or `NULL` to set as the result of `output_utf8()`.
+#'   Ignored when `output_utf8()` is `FALSE`.
 #' @return The function returns `x` invisibly.
 #' @seealso [utf8_format()].
 #' @examples

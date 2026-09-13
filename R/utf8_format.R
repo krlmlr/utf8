@@ -16,39 +16,31 @@
 #'
 #' Format a character object for UTF-8 printing.
 #'
-#' `utf8_format()` formats a character object for printing, optionally
-#' truncating long character strings.
+#' `utf8_format()` formats a character object for printing, optionally truncating long character strings.
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
-#' @param trim logical scalar indicating whether to suppress padding spaces
-#'   around elements.
+#' @param trim logical scalar indicating whether to suppress padding spaces around elements.
 #' @param chars integer scalar indicating the maximum number of character units
-#'   to display.  Wide characters like emoji take two character units; combining
-#'   marks and default ignorables take none. Longer strings get truncated and
-#'   suffixed or prefixed with an ellipsis (`"..."` or `"\u2026"`,
-#'   whichever is most appropriate for the current character locale). Set to
-#'   `NULL` to limit output to the line width as determined by
-#'   `getOption("width")`.
-#' @param justify justification; one of `"left"`, `"right"`,
-#'   `"centre"`, or `"none"`. Can be abbreviated.
-#' @param width the minimum field width; set to `NULL` or `0` for no
-#'   restriction.
-#' @param na.encode logical scalar indicating whether to encode `NA`
-#'   values as character strings.
-#' @param quote logical scalar indicating whether to format for a context with
-#'   surrounding double-quotes (`'"'`) and escaped internal double-quotes.
-#' @param na.print character string (or `NULL`) indicating the encoding
-#'   for `NA` values. Ignored when `na.encode` is `FALSE`.
-#' @param print.gap non-negative integer (or `NULL`) giving the number of
-#'   spaces in gaps between columns; set to `NULL` or `1` for a single
-#'   space.
-#' @param utf8 logical scalar indicating whether to format for a UTF-8 capable
-#'   display (ASCII-only otherwise), or `NULL` to format for output
-#'   capabilities as determined by `output_utf8()`.
-#' @return A character object with the same attributes as `x` but with
-#'   `Encoding` set to `"UTF-8"` for elements that can be converted to
-#'   valid UTF-8 and `"bytes"` for others.
+#'   to display.  Wide characters like emoji take two character units;
+#'   combining marks and default ignorables take none.
+#'   Longer strings get truncated and suffixed or prefixed with an ellipsis (`"..."` or `"\u2026"`,
+#'   whichever is most appropriate for the current character locale).
+#'   Set to `NULL` to limit output to the line width as determined by `getOption("width")`.
+#' @param justify justification; one of `"left"`, `"right"`, `"centre"`, or `"none"`.
+#'   Can be abbreviated.
+#' @param width the minimum field width; set to `NULL` or `0` for no restriction.
+#' @param na.encode logical scalar indicating whether to encode `NA` values as character strings.
+#' @param quote logical scalar indicating whether to format for a context with surrounding double-quotes (`'"'`)
+#'   and escaped internal double-quotes.
+#' @param na.print character string (or `NULL`) indicating the encoding for `NA` values.
+#'   Ignored when `na.encode` is `FALSE`.
+#' @param print.gap non-negative integer (or `NULL`) giving the number of spaces in gaps between columns;
+#'   set to `NULL` or `1` for a single space.
+#' @param utf8 logical scalar indicating whether to format for a UTF-8 capable display (ASCII-only otherwise),
+#'   or `NULL` to format for output capabilities as determined by `output_utf8()`.
+#' @return A character object with the same attributes as `x`
+#'   but with `Encoding` set to `"UTF-8"` for elements that can be converted to valid UTF-8 and `"bytes"` for others.
 #' @seealso [utf8_print()], [utf8_encode()].
 #' @examples
 #'
