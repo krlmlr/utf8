@@ -25,7 +25,7 @@ utf8_encode(
 \item{quote}{logical scalar indicating whether to surround results with double-quotes and escape internal double-quotes.}
 
 \item{justify}{justification; one of \code{"left"}, \code{"right"}, \code{"centre"}, or \code{"none"}.
-Can be abbreviated.}
+ Can be abbreviated.}
 
 \item{escapes}{a character string specifying the display style for the backslash escapes,
 as an ANSI SGR parameter string, or NULL for no styling.}
@@ -45,9 +45,9 @@ adjusting the width for display.
 \details{
 \code{utf8_encode()} encodes a character object for printing on a UTF-8 device
 by escaping controls characters and other non-printable characters.
-When \code{display = TRUE}, the function optimizes the encoding for display
+ When \code{display = TRUE}, the function optimizes the encoding for display
 by removing default ignorable characters (soft hyphens, zero-width spaces, etc.) and placing zero-width spaces after wide emoji.
-When \code{output_utf8()} is \code{FALSE} the function escapes all non-ASCII characters and gives the same results on all platforms.
+ When \code{output_utf8()} is \code{FALSE} the function escapes all non-ASCII characters and gives the same results on all platforms.
 }
 \examples{
 
