@@ -15,13 +15,13 @@
 #' Encode Character Object as for UTF-8 Printing
 #'
 #' Escape the strings in a character object, optionally adding quotes or spaces,
-#' adjusting the width for display.
+#'  adjusting the width for display.
 #'
 #' `utf8_encode()` encodes a character object for printing on a UTF-8 device
-#' by escaping controls characters and other non-printable characters.
-#' When `display = TRUE`, the function optimizes the encoding for display
-#' by removing default ignorable characters (soft hyphens, zero-width spaces, etc.) and placing zero-width spaces after wide emoji.
-#' When `output_utf8()` is `FALSE` the function escapes all non-ASCII characters and gives the same results on all platforms.
+#'  by escaping controls characters and other non-printable characters.
+#'  When `display = TRUE`, the function optimizes the encoding for display
+#'  by removing default ignorable characters (soft hyphens, zero-width spaces, etc.) and placing zero-width spaces after wide emoji.
+#'  When `output_utf8()` is `FALSE` the function escapes all non-ASCII characters and gives the same results on all platforms.
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
