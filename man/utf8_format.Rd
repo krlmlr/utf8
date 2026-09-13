@@ -26,14 +26,14 @@ utf8_format(
 \item{trim}{logical scalar indicating whether to suppress padding spaces around elements.}
 
 \item{chars}{integer scalar indicating the maximum number of character units to display.
-Wide characters like emoji take two character units;
+ Wide characters like emoji take two character units;
 combining marks and default ignorables take none.
-Longer strings get truncated and suffixed or prefixed with an ellipsis (\code{"..."} or \code{"\\u2026"},
+ Longer strings get truncated and suffixed or prefixed with an ellipsis (\code{"..."} or \code{"\\u2026"},
 whichever is most appropriate for the current character locale).
-Set to \code{NULL} to limit output to the line width as determined by \code{getOption("width")}.}
+ Set to \code{NULL} to limit output to the line width as determined by \code{getOption("width")}.}
 
 \item{justify}{justification; one of \code{"left"}, \code{"right"}, \code{"centre"}, or \code{"none"}.
-Can be abbreviated.}
+ Can be abbreviated.}
 
 \item{width}{the minimum field width; set to \code{NULL} or \code{0} for no restriction.}
 
@@ -43,7 +43,7 @@ Can be abbreviated.}
 and escaped internal double-quotes.}
 
 \item{na.print}{character string (or \code{NULL}) indicating the encoding for \code{NA} values.
-Ignored when \code{na.encode} is \code{FALSE}.}
+ Ignored when \code{na.encode} is \code{FALSE}.}
 
 \item{print.gap}{non-negative integer (or \code{NULL}) giving the number of spaces in gaps between columns;
 set to \code{NULL} or \code{1} for a single space.}
