@@ -1,5 +1,28 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9022 (2026-09-13)
+
+## Chore
+
+- Remove Copilot setup steps.
+
+## Documentation
+
+- State the goals and non-goals (#121).
+
+- Break lines at meaning boundaries (#120).
+
+- Harmonize README and pkgdown front page rendering (#119).
+
+## fledge
+
+- Bump version to 1.2.6.9021 (#117).
+
+- Bump version to 1.2.6.9020 (#115).
+
+- Bump version to 1.2.6.9019 (#114).
+
+
 # utf8 1.2.6.9021 (2026-09-13)
 
 ## Features
