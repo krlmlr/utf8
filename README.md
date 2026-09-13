@@ -106,7 +106,7 @@ Cite *utf8* with the following BibTeX entry:
     @Manual{,
       title = {utf8: Unicode Text Processing},
       author = {Patrick O. Perry},
-      note = {R package version 1.2.6.9020},
+      note = {R package version 1.2.6},
       url = {https://krlmlr.github.io/utf8/},
     }
 

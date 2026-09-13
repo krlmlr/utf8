@@ -137,7 +137,12 @@ utf8_print(intToUtf8(0x1F600 + 0:79), chars = 1000) # higher character limit
 Cite *utf8* with the following BibTeX entry:
 
 ```{r echo = FALSE, comment = NA}
-print(suppressWarnings(citation("utf8")), "Bibtex")
+cit <- suppressWarnings(citation("utf8"))
+# Cite the release, not whatever development build happens to be installed:
+# `citation()` takes the version from the installed package, so a `.9xxx`
+# suffix would put this environment into the rendered README.
+cit$note <- sub("^(R package version [0-9]+[.][0-9]+[.][0-9]+)[.][0-9]+$", "\\1", cit$note)
+print(cit, "Bibtex")
 ```
 
 
