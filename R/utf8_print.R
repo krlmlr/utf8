@@ -19,8 +19,8 @@
 #' `utf8_print()` prints a character object after formatting it with [utf8_format()].
 #'
 #' For ANSI terminal output (when `output_ansi()` is `TRUE`),
-#'  you can style the row and column names with the `rownames` and `names` parameters, specifying an ANSI SGR parameter string;
-#'  see <https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters>.
+#' you can style the row and column names with the `rownames` and `names` parameters, specifying an ANSI SGR parameter string;
+#' see <https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters>.
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
