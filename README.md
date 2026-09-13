@@ -5,8 +5,8 @@
 
 <!-- badges: start -->
 
-[![rcc](https://github.com/patperry/r-utf8/workflows/rcc/badge.svg)](https://github.com/krlmlr/utf8/actions)
-[![Coverage Status](https://codecov.io/github/patperry/r-utf8/coverage.svg?branch=main "Code Coverage")](https://app.codecov.io/github/patperry/r-utf8?branch=main "Code Coverage")
+[![rcc](https://github.com/krlmlr/utf8/workflows/rcc/badge.svg)](https://github.com/krlmlr/utf8/actions)
+[![Coverage Status](https://codecov.io/gh/krlmlr/utf8/graph/badge.svg "Code Coverage")](https://app.codecov.io/gh/krlmlr/utf8/tree/main "Code Coverage")
 [![CRAN Status](https://www.r-pkg.org/badges/version/utf8 "CRAN Page")](https://cran.r-project.org/package=utf8 "CRAN Page")
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg "Apache License, Version 2.0")](https://www.apache.org/licenses/LICENSE-2.0.html "Apache License, Version 2.0")
 [![CRAN RStudio Mirror Downloads](https://cranlogs.r-pkg.org/badges/utf8 "CRAN Downloads")](https://cran.r-project.org/package=utf8 "CRAN Page")
