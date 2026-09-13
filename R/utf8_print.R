@@ -24,9 +24,7 @@
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
-#' @param chars integer scalar indicating the maximum number of character units
-#'   to display.  Wide characters like emoji take two character units;
-#'   combining marks and default ignorables take none.
+#' @param chars integer scalar indicating the maximum number of character units to display.  Wide characters like emoji take two character units; combining marks and default ignorables take none.
 #'   Longer strings get truncated and suffixed or prefixed with an ellipsis (`"..."` in C locale, `"\u2026"` in others).
 #'   Set to `NULL` to limit output to the line width as determined by `getOption("width")`.
 #' @param quote logical scalar indicating whether to put surrounding double-quotes (`'"'`) around character strings
