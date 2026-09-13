@@ -55,6 +55,28 @@ local({
 *utf8* is an R package for manipulating and printing UTF-8 text that fixes multiple bugs in R's UTF-8 handling.
 
 
+## Goals and non-goals
+
+*utf8* aims to:
+
+- convert character data to UTF-8 from the encoding declared on it,
+  and fail loudly when that declaration turns out to be wrong
+- normalize text to Unicode composed normal form (NFC),
+  optionally case-folding it or applying the compatibility maps for NFKC
+- measure and format text by display width, counting wide characters such as emoji as two columns and combining marks as none
+- print UTF-8 text, emoji included, where R's own `print()` escapes it,
+  and report what the output connection can actually display with `output_utf8()` and `output_ansi()`
+- install everywhere, with no package dependencies beyond R itself
+
+It is explicitly not trying to:
+
+- guess an encoding from the bytes: `as_utf8()` converts from the declared `Encoding()` and throws an error when it cannot
+- convert text *out of* UTF-8 into some other encoding, which is what `iconv()` is for
+- read or write files: every function takes a character object that is already in your R session
+- be a text analysis package: these functions were split off from *corpus* in utf8 1.0.0, and tokenization and term statistics stayed behind
+- model the full range of character locales: only C and UTF-8 are handled,
+  and on Windows every non-C locale is treated as UTF-8
+
 ## Installation
 
 ### Stable version
