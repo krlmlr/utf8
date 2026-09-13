@@ -21,7 +21,9 @@
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
 #' @param trim logical scalar indicating whether to suppress padding spaces around elements.
-#' @param chars integer scalar indicating the maximum number of character units to display.  Wide characters like emoji take two character units; combining marks and default ignorables take none.
+#' @param chars integer scalar indicating the maximum number of character units to display.
+#'   Wide characters like emoji take two character units;
+#'   combining marks and default ignorables take none.
 #'   Longer strings get truncated and suffixed or prefixed with an ellipsis (`"..."` or `"\u2026"`,
 #'   whichever is most appropriate for the current character locale).
 #'   Set to `NULL` to limit output to the line width as determined by `getOption("width")`.

@@ -24,7 +24,9 @@
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
-#' @param chars integer scalar indicating the maximum number of character units to display.  Wide characters like emoji take two character units; combining marks and default ignorables take none.
+#' @param chars integer scalar indicating the maximum number of character units to display.
+#'   Wide characters like emoji take two character units;
+#'   combining marks and default ignorables take none.
 #'   Longer strings get truncated and suffixed or prefixed with an ellipsis (`"..."` in C locale, `"\u2026"` in others).
 #'   Set to `NULL` to limit output to the line width as determined by `getOption("width")`.
 #' @param quote logical scalar indicating whether to put surrounding double-quotes (`'"'`) around character strings
@@ -41,7 +43,8 @@
 #' @param escapes a character string specifying the display style for the backslash escapes, as an ANSI SGR parameter string.
 #' @param display logical scalar indicating whether to optimize the encoding for display, not byte-for-byte data transmission.
 #' @param style logical scalar indicating whether to apply ANSI terminal escape codes
-#'   to style the output.  Ignored when `output_ansi()` is `FALSE`.
+#'   to style the output.
+#'   Ignored when `output_ansi()` is `FALSE`.
 #' @param utf8 logical scalar indicating whether to optimize results for a UTF-8 capable display,
 #'   or `NULL` to set as the result of `output_utf8()`.
 #'   Ignored when `output_utf8()` is `FALSE`.

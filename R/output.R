@@ -57,8 +57,8 @@ output_ansi <- function() {
 #' but only a subset of UTF-8 is available (defined by the current character locale)
 #' when the output is redirected by `knitr` or another process.
 #' Unfortunately, it is impossible to set the character locale to UTF-8 on Windows.
-#' Further, the `utf8` package only handles two character locales: C and UTF-8.  To get around this, on Windows,
-#' we treat all non-C locales on that platform as UTF-8.
+#' Further, the `utf8` package only handles two character locales: C and UTF-8.
+#' To get around this, on Windows, we treat all non-C locales on that platform as UTF-8.
 #' This liberal approach means that characters in the user's locale never get escaped;
 #' others will get output as `<U+XXXX>`, with incorrect values for `utf8_width()`.
 #'
