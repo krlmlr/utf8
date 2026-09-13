@@ -26,50 +26,41 @@ utf8_print(
 
 \item{...}{These dots are for future extensions and must be empty.}
 
-\item{chars}{integer scalar indicating the maximum number of character units
-to display.  Wide characters like emoji take two character units; combining
-marks and default ignorables take none. Longer strings get truncated and
-suffixed or prefixed with an ellipsis (\code{"..."} in C locale,
-\code{"\\u2026"} in others). Set to \code{NULL} to limit output to the line
-width as determined by \code{getOption("width")}.}
+\item{chars}{integer scalar indicating the maximum number of character units to display.
+Wide characters like emoji take two character units;
+combining marks and default ignorables take none.
+Longer strings get truncated and suffixed or prefixed with an ellipsis (\code{"..."} in C locale, \code{"\\u2026"} in others).
+Set to \code{NULL} to limit output to the line width as determined by \code{getOption("width")}.}
 
-\item{quote}{logical scalar indicating whether to put surrounding
-double-quotes (\code{'"'}) around character strings and escape internal
-double-quotes.}
+\item{quote}{logical scalar indicating whether to put surrounding double-quotes (\code{'"'}) around character strings
+and escape internal double-quotes.}
 
-\item{na.print}{character string (or \code{NULL}) indicating the encoding
-for \code{NA} values. Ignored when \code{na.encode} is \code{FALSE}.}
+\item{na.print}{character string (or \code{NULL}) indicating the encoding for \code{NA} values.
+Ignored when \code{na.encode} is \code{FALSE}.}
 
-\item{print.gap}{non-negative integer (or \code{NULL}) giving the number of
-spaces in gaps between columns; set to \code{NULL} or \code{1} for a single
-space.}
+\item{print.gap}{non-negative integer (or \code{NULL}) giving the number of spaces in gaps between columns;
+set to \code{NULL} or \code{1} for a single space.}
 
-\item{right}{logical scalar indicating whether to right-justify character
-strings.}
+\item{right}{logical scalar indicating whether to right-justify character strings.}
 
-\item{max}{non-negative integer (or \code{NULL}) indicating the maximum
-number of elements to print; set to \code{getOption("max.print")} if
-argument is \code{NULL}.}
+\item{max}{non-negative integer (or \code{NULL}) indicating the maximum number of elements to print;
+set to \code{getOption("max.print")} if argument is \code{NULL}.}
 
-\item{names}{a character string specifying the display style for the
-(column) names, as an ANSI SGR parameter string.}
+\item{names}{a character string specifying the display style for the (column) names, as an ANSI SGR parameter string.}
 
-\item{rownames}{a character string specifying the display style for the row
-names, as an ANSI SGR parameter string.}
+\item{rownames}{a character string specifying the display style for the row names, as an ANSI SGR parameter string.}
 
-\item{escapes}{a character string specifying the display style for the
-backslash escapes, as an ANSI SGR parameter string.}
+\item{escapes}{a character string specifying the display style for the backslash escapes, as an ANSI SGR parameter string.}
 
-\item{display}{logical scalar indicating whether to optimize the encoding
-for display, not byte-for-byte data transmission.}
+\item{display}{logical scalar indicating whether to optimize the encoding for display, not byte-for-byte data transmission.}
 
-\item{style}{logical scalar indicating whether to apply ANSI terminal escape
-codes to style the output.  Ignored when \code{output_ansi()} is
-\code{FALSE}.}
+\item{style}{logical scalar indicating whether to apply ANSI terminal escape codes
+to style the output.
+Ignored when \code{output_ansi()} is \code{FALSE}.}
 
-\item{utf8}{logical scalar indicating whether to optimize results for a
-UTF-8 capable display, or \code{NULL} to set as the result of
-\code{output_utf8()}. Ignored when \code{output_utf8()} is \code{FALSE}.}
+\item{utf8}{logical scalar indicating whether to optimize results for a UTF-8 capable display,
+or \code{NULL} to set as the result of \code{output_utf8()}.
+Ignored when \code{output_utf8()} is \code{FALSE}.}
 }
 \value{
 The function returns \code{x} invisibly.
@@ -78,13 +69,11 @@ The function returns \code{x} invisibly.
 Print a UTF-8 character object.
 }
 \details{
-\code{utf8_print()} prints a character object after formatting it with
-\code{\link[=utf8_format]{utf8_format()}}.
+\code{utf8_print()} prints a character object after formatting it with \code{\link[=utf8_format]{utf8_format()}}.
 
-For ANSI terminal output (when \code{output_ansi()} is \code{TRUE}), you can
-style the row and column names with the \code{rownames} and \code{names}
-parameters, specifying an ANSI SGR parameter string; see
-\url{https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters}.
+For ANSI terminal output (when \code{output_ansi()} is \code{TRUE}),
+you can style the row and column names with the \code{rownames} and \code{names} parameters, specifying an ANSI SGR parameter string;
+see \url{https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters}.
 }
 \examples{
 

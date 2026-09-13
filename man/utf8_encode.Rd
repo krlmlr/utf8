@@ -20,41 +20,34 @@ utf8_encode(
 
 \item{...}{These dots are for future extensions and must be empty.}
 
-\item{width}{integer giving the minimum field width; specify \code{NULL} or
-\code{NA} for no minimum.}
+\item{width}{integer giving the minimum field width; specify \code{NULL} or \code{NA} for no minimum.}
 
-\item{quote}{logical scalar indicating whether to surround results with
-double-quotes and escape internal double-quotes.}
+\item{quote}{logical scalar indicating whether to surround results with double-quotes and escape internal double-quotes.}
 
-\item{justify}{justification; one of \code{"left"}, \code{"right"},
-\code{"centre"}, or \code{"none"}. Can be abbreviated.}
+\item{justify}{justification; one of \code{"left"}, \code{"right"}, \code{"centre"}, or \code{"none"}.
+Can be abbreviated.}
 
-\item{escapes}{a character string specifying the display style for the
-backslash escapes, as an ANSI SGR parameter string, or NULL for no styling.}
+\item{escapes}{a character string specifying the display style for the backslash escapes,
+as an ANSI SGR parameter string, or NULL for no styling.}
 
-\item{display}{logical scalar indicating whether to optimize the encoding
-for display, not byte-for-byte data transmission.}
+\item{display}{logical scalar indicating whether to optimize the encoding for display, not byte-for-byte data transmission.}
 
-\item{utf8}{logical scalar indicating whether to encode for a UTF-8 capable
-display (ASCII-only otherwise), or \code{NULL} to encode for output
-capabilities as determined by \code{output_utf8()}.}
+\item{utf8}{logical scalar indicating whether to encode for a UTF-8 capable display (ASCII-only otherwise),
+or \code{NULL} to encode for output capabilities as determined by \code{output_utf8()}.}
 }
 \value{
-A character object with the same attributes as \code{x} but with
-\code{Encoding} set to \code{"UTF-8"}.
+A character object with the same attributes as \code{x} but with \code{Encoding} set to \code{"UTF-8"}.
 }
 \description{
-Escape the strings in a character object, optionally adding quotes or
-spaces, adjusting the width for display.
+Escape the strings in a character object, optionally adding quotes or spaces,
+adjusting the width for display.
 }
 \details{
 \code{utf8_encode()} encodes a character object for printing on a UTF-8 device
-by escaping controls characters and other non-printable characters. When
-\code{display = TRUE}, the function optimizes the encoding for display by
-removing default ignorable characters (soft hyphens, zero-width spaces,
-etc.) and placing zero-width spaces after wide emoji. When
-\code{output_utf8()} is \code{FALSE} the function escapes all non-ASCII
-characters and gives the same results on all platforms.
+by escaping controls characters and other non-printable characters.
+When \code{display = TRUE}, the function optimizes the encoding for display
+by removing default ignorable characters (soft hyphens, zero-width spaces, etc.) and placing zero-width spaces after wide emoji.
+When \code{output_utf8()} is \code{FALSE} the function escapes all non-ASCII characters and gives the same results on all platforms.
 }
 \examples{
 

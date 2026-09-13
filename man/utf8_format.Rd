@@ -23,51 +23,43 @@ utf8_format(
 
 \item{...}{These dots are for future extensions and must be empty.}
 
-\item{trim}{logical scalar indicating whether to suppress padding spaces
-around elements.}
+\item{trim}{logical scalar indicating whether to suppress padding spaces around elements.}
 
-\item{chars}{integer scalar indicating the maximum number of character units
-to display.  Wide characters like emoji take two character units; combining
-marks and default ignorables take none. Longer strings get truncated and
-suffixed or prefixed with an ellipsis (\code{"..."} or \code{"\\u2026"},
-whichever is most appropriate for the current character locale). Set to
-\code{NULL} to limit output to the line width as determined by
-\code{getOption("width")}.}
+\item{chars}{integer scalar indicating the maximum number of character units to display.
+Wide characters like emoji take two character units;
+combining marks and default ignorables take none.
+Longer strings get truncated and suffixed or prefixed with an ellipsis (\code{"..."} or \code{"\\u2026"},
+whichever is most appropriate for the current character locale).
+Set to \code{NULL} to limit output to the line width as determined by \code{getOption("width")}.}
 
-\item{justify}{justification; one of \code{"left"}, \code{"right"},
-\code{"centre"}, or \code{"none"}. Can be abbreviated.}
+\item{justify}{justification; one of \code{"left"}, \code{"right"}, \code{"centre"}, or \code{"none"}.
+Can be abbreviated.}
 
-\item{width}{the minimum field width; set to \code{NULL} or \code{0} for no
-restriction.}
+\item{width}{the minimum field width; set to \code{NULL} or \code{0} for no restriction.}
 
-\item{na.encode}{logical scalar indicating whether to encode \code{NA}
-values as character strings.}
+\item{na.encode}{logical scalar indicating whether to encode \code{NA} values as character strings.}
 
-\item{quote}{logical scalar indicating whether to format for a context with
-surrounding double-quotes (\code{'"'}) and escaped internal double-quotes.}
+\item{quote}{logical scalar indicating whether to format for a context with surrounding double-quotes (\code{'"'})
+and escaped internal double-quotes.}
 
-\item{na.print}{character string (or \code{NULL}) indicating the encoding
-for \code{NA} values. Ignored when \code{na.encode} is \code{FALSE}.}
+\item{na.print}{character string (or \code{NULL}) indicating the encoding for \code{NA} values.
+Ignored when \code{na.encode} is \code{FALSE}.}
 
-\item{print.gap}{non-negative integer (or \code{NULL}) giving the number of
-spaces in gaps between columns; set to \code{NULL} or \code{1} for a single
-space.}
+\item{print.gap}{non-negative integer (or \code{NULL}) giving the number of spaces in gaps between columns;
+set to \code{NULL} or \code{1} for a single space.}
 
-\item{utf8}{logical scalar indicating whether to format for a UTF-8 capable
-display (ASCII-only otherwise), or \code{NULL} to format for output
-capabilities as determined by \code{output_utf8()}.}
+\item{utf8}{logical scalar indicating whether to format for a UTF-8 capable display (ASCII-only otherwise),
+or \code{NULL} to format for output capabilities as determined by \code{output_utf8()}.}
 }
 \value{
-A character object with the same attributes as \code{x} but with
-\code{Encoding} set to \code{"UTF-8"} for elements that can be converted to
-valid UTF-8 and \code{"bytes"} for others.
+A character object with the same attributes as \code{x}
+but with \code{Encoding} set to \code{"UTF-8"} for elements that can be converted to valid UTF-8 and \code{"bytes"} for others.
 }
 \description{
 Format a character object for UTF-8 printing.
 }
 \details{
-\code{utf8_format()} formats a character object for printing, optionally
-truncating long character strings.
+\code{utf8_format()} formats a character object for printing, optionally truncating long character strings.
 }
 \examples{
 
