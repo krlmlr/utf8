@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">utf8</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9021</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9022</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -68,67 +68,59 @@
 
 
 <dt id="arg-trim">trim<a class="anchor" aria-label="anchor" href="#arg-trim"></a></dt>
-<dd><p>logical scalar indicating whether to suppress padding spaces
-around elements.</p></dd>
+<dd><p>logical scalar indicating whether to suppress padding spaces around elements.</p></dd>
 
 
 <dt id="arg-chars">chars<a class="anchor" aria-label="anchor" href="#arg-chars"></a></dt>
-<dd><p>integer scalar indicating the maximum number of character units
-to display.  Wide characters like emoji take two character units; combining
-marks and default ignorables take none. Longer strings get truncated and
-suffixed or prefixed with an ellipsis (<code>"..."</code> or <code>"\u2026"</code>,
-whichever is most appropriate for the current character locale). Set to
-<code>NULL</code> to limit output to the line width as determined by
-<code>getOption("width")</code>.</p></dd>
+<dd><p>integer scalar indicating the maximum number of character units to display.
+Wide characters like emoji take two character units;
+combining marks and default ignorables take none.
+Longer strings get truncated and suffixed or prefixed with an ellipsis (<code>"..."</code> or <code>"\u2026"</code>,
+whichever is most appropriate for the current character locale).
+Set to <code>NULL</code> to limit output to the line width as determined by <code>getOption("width")</code>.</p></dd>
 
 
 <dt id="arg-justify">justify<a class="anchor" aria-label="anchor" href="#arg-justify"></a></dt>
-<dd><p>justification; one of <code>"left"</code>, <code>"right"</code>,
-<code>"centre"</code>, or <code>"none"</code>. Can be abbreviated.</p></dd>
+<dd><p>justification; one of <code>"left"</code>, <code>"right"</code>, <code>"centre"</code>, or <code>"none"</code>.
+Can be abbreviated.</p></dd>
 
 
 <dt id="arg-width">width<a class="anchor" aria-label="anchor" href="#arg-width"></a></dt>
-<dd><p>the minimum field width; set to <code>NULL</code> or <code>0</code> for no
-restriction.</p></dd>
+<dd><p>the minimum field width; set to <code>NULL</code> or <code>0</code> for no restriction.</p></dd>
 
 
 <dt id="arg-na-encode">na.encode<a class="anchor" aria-label="anchor" href="#arg-na-encode"></a></dt>
-<dd><p>logical scalar indicating whether to encode <code>NA</code>
-values as character strings.</p></dd>
+<dd><p>logical scalar indicating whether to encode <code>NA</code> values as character strings.</p></dd>
 
 
 <dt id="arg-quote">quote<a class="anchor" aria-label="anchor" href="#arg-quote"></a></dt>
-<dd><p>logical scalar indicating whether to format for a context with
-surrounding double-quotes (<code>'"'</code>) and escaped internal double-quotes.</p></dd>
+<dd><p>logical scalar indicating whether to format for a context with surrounding double-quotes (<code>'"'</code>)
+and escaped internal double-quotes.</p></dd>
 
 
 <dt id="arg-na-print">na.print<a class="anchor" aria-label="anchor" href="#arg-na-print"></a></dt>
-<dd><p>character string (or <code>NULL</code>) indicating the encoding
-for <code>NA</code> values. Ignored when <code>na.encode</code> is <code>FALSE</code>.</p></dd>
+<dd><p>character string (or <code>NULL</code>) indicating the encoding for <code>NA</code> values.
+Ignored when <code>na.encode</code> is <code>FALSE</code>.</p></dd>
 
 
 <dt id="arg-print-gap">print.gap<a class="anchor" aria-label="anchor" href="#arg-print-gap"></a></dt>
-<dd><p>non-negative integer (or <code>NULL</code>) giving the number of
-spaces in gaps between columns; set to <code>NULL</code> or <code>1</code> for a single
-space.</p></dd>
+<dd><p>non-negative integer (or <code>NULL</code>) giving the number of spaces in gaps between columns;
+set to <code>NULL</code> or <code>1</code> for a single space.</p></dd>
 
 
 <dt id="arg-utf-">utf8<a class="anchor" aria-label="anchor" href="#arg-utf-"></a></dt>
-<dd><p>logical scalar indicating whether to format for a UTF-8 capable
-display (ASCII-only otherwise), or <code>NULL</code> to format for output
-capabilities as determined by <code><a href="output_utf8.html">output_utf8()</a></code>.</p></dd>
+<dd><p>logical scalar indicating whether to format for a UTF-8 capable display (ASCII-only otherwise),
+or <code>NULL</code> to format for output capabilities as determined by <code><a href="output_utf8.html">output_utf8()</a></code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>A character object with the same attributes as <code>x</code> but with
-<code>Encoding</code> set to <code>"UTF-8"</code> for elements that can be converted to
-valid UTF-8 and <code>"bytes"</code> for others.</p>
+    <p>A character object with the same attributes as <code>x</code>
+but with <code>Encoding</code> set to <code>"UTF-8"</code> for elements that can be converted to valid UTF-8 and <code>"bytes"</code> for others.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><code>utf8_format()</code> formats a character object for printing, optionally
-truncating long character strings.</p>
+    <p><code>utf8_format()</code> formats a character object for printing, optionally truncating long character strings.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

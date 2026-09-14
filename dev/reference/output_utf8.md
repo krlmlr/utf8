@@ -50,7 +50,7 @@ C and UTF-8. To get around this, on Windows, we treat all non-C locales
 on that platform as UTF-8. This liberal approach means that characters
 in the user's locale never get escaped; others will get output as
 `<U+XXXX>`, with incorrect values for
-[`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md).
+[`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md).
 
 ## See also
 

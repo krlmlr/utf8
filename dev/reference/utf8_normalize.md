@@ -62,7 +62,7 @@ specified by the `map_case`, `map_compat`, `map_quote`, and
 
 ## See also
 
-[`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md).
+[`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md).
 
 ## Examples
 

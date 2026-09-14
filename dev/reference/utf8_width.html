@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">utf8</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9021</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9022</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -64,26 +64,21 @@
 
 
 <dt id="arg-utf-">utf8<a class="anchor" aria-label="anchor" href="#arg-utf-"></a></dt>
-<dd><p>logical scalar indicating whether to determine widths assuming a
-UTF-8 capable display (ASCII-only otherwise), or <code>NULL</code> to format for
-output capabilities as determined by <code><a href="output_utf8.html">output_utf8()</a></code>.</p></dd>
+<dd><p>logical scalar indicating whether to determine widths assuming a UTF-8 capable display (ASCII-only otherwise),
+or <code>NULL</code> to format for output capabilities as determined by <code><a href="output_utf8.html">output_utf8()</a></code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
     <h2 id="value">Value<a class="anchor" aria-label="anchor" href="#value"></a></h2>
-    <p>An integer object, with the same <code>names</code>, <code>dim</code>, and
-<code>dimnames</code> as <code>x</code>.</p>
+    <p>An integer object, with the same <code>names</code>, <code>dim</code>, and <code>dimnames</code> as <code>x</code>.</p>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><code>utf8_width()</code> returns the printed widths of the elements of a character
-object on a UTF-8 device (or on an ASCII device when <code><a href="output_utf8.html">output_utf8()</a></code> is
-<code>FALSE</code>), when printed with <code><a href="utf8_print.html">utf8_print()</a></code>. If the string is not
-printable on the device, for example if it contains a control code like
-<code>"\n"</code>, then the result is <code>NA</code>. If <code>encode = TRUE</code>, the
-default, then the function returns the widths of the encoded elements via
-<code><a href="utf8_encode.html">utf8_encode()</a></code>); otherwise, the function returns the widths of the
-original elements.</p>
+    <p><code>utf8_width()</code> returns the printed widths of the elements of a character object on a UTF-8 device
+(or on an ASCII device when <code><a href="output_utf8.html">output_utf8()</a></code> is <code>FALSE</code>), when printed with <code><a href="utf8_print.html">utf8_print()</a></code>.
+If the string is not printable on the device, for example if it contains a control code like <code>"\n"</code>, then the result is <code>NA</code>.
+If <code>encode = TRUE</code>, the default, then the function returns the widths of the encoded elements via <code><a href="utf8_encode.html">utf8_encode()</a></code>);
+otherwise, the function returns the widths of the original elements.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

@@ -1,5 +1,33 @@
 # Changelog
 
+## utf8 1.2.6.9022 (2026-09-13)
+
+### Chore
+
+- Remove Copilot setup steps.
+
+### Documentation
+
+- State the goals and non-goals
+  ([\#121](https://github.com/krlmlr/utf8/issues/121)).
+
+- Break lines at meaning boundaries
+  ([\#120](https://github.com/krlmlr/utf8/issues/120)).
+
+- Harmonize README and pkgdown front page rendering
+  ([\#119](https://github.com/krlmlr/utf8/issues/119)).
+
+### fledge
+
+- Bump version to 1.2.6.9021
+  ([\#117](https://github.com/krlmlr/utf8/issues/117)).
+
+- Bump version to 1.2.6.9020
+  ([\#115](https://github.com/krlmlr/utf8/issues/115)).
+
+- Bump version to 1.2.6.9019
+  ([\#114](https://github.com/krlmlr/utf8/issues/114)).
+
 ## utf8 1.2.6.9021 (2026-09-13)
 
 ### Features
@@ -252,9 +280,9 @@ CRAN release: 2025-05-01
 ### Features
 
 - Strict argument checking for
-  [`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md)
+  [`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md)
   and
-  [`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md),
+  [`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md),
   no extra arguments allowed.
 
 ### Chore
@@ -311,7 +339,7 @@ CRAN release: 2023-01-31
 CRAN release: 2021-07-24
 
 - Reenable all tests.
-- [`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md)
+- [`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md)
   now reports correct widths for narrow emojis
   ([\#9](https://github.com/krlmlr/utf8/issues/9)).
 
@@ -342,18 +370,18 @@ CRAN release: 2018-01-03
 ### MINOR IMPROVEMENTS
 
 - Make
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
   always return `TRUE` on Windows, so that characters in the user’s
   native locale don’t get escaped by
-  [`utf8_encode()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_encode.md).
+  [`utf8_encode()`](https://krlmlr.github.io/utf8/dev/reference/utf8_encode.md).
   The downside of this change is that on Windows,
-  [`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md)
+  [`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md)
   reports the wrong values for characters outside the user’s locale when
   [`stdout()`](https://rdrr.io/r/base/showConnections.html) is
   redirected by `knitr` or another process.
 
 - When truncating long strings strings via
-  [`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md),
+  [`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md),
   use an ellipsis that is printable in the user’s native locale
   (`"\u2026" or`“…”\`).
 
@@ -364,7 +392,7 @@ CRAN release: 2017-12-14
 ### BUG FIXES
 
 - Fix bug in
-  [`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md)
+  [`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md)
   with non-`NULL` `width` argument.
 
 ## utf8 1.1.1 (2017-11-28)
@@ -374,7 +402,7 @@ CRAN release: 2017-11-29
 ### BUG FIXES
 
 - Fix PROTECT bug in
-  [`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md).
+  [`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md).
 
 ## utf8 1.1.0 (2017-11-20)
 
@@ -383,44 +411,44 @@ CRAN release: 2017-11-20
 ### NEW FEATURES
 
 - Added
-  [`output_ansi()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+  [`output_ansi()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
   and
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
   functions to test for output capabilities.
 
 ### MINOR IMPROVEMENTS
 
 - Add `utf8` argument to
-  [`utf8_encode()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_encode.md),
-  [`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md),
-  [`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md),
+  [`utf8_encode()`](https://krlmlr.github.io/utf8/dev/reference/utf8_encode.md),
+  [`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md),
+  [`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md),
   and
-  [`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md)
+  [`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md)
   for precise control over assumed output capabilities; defaults to the
   result of
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md).
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md).
 
 - Add ability to style backslash escapes with the `escapes` arguments to
-  [`utf8_encode()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_encode.md)
+  [`utf8_encode()`](https://krlmlr.github.io/utf8/dev/reference/utf8_encode.md)
   and
-  [`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md).
+  [`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md).
   Switch from “faint” styling to no styling by default.
 
 - Slightly reword error messages for
-  [`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md).
+  [`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md).
 
 - Fix (spurious) `rchk` warnings.
 
 ### BUG FIXES
 
 - Fix bug in
-  [`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md)
+  [`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md)
   determining width of non-ASCII strings when `LC_CTYPE=C`.
 
 ### DEPRECATED AND DEFUNCT
 
 - No longer export the C version of
-  [`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md)
+  [`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md)
   (the R version is still present).
 
 ## utf8 1.0.0 (2017-11-06)
@@ -430,14 +458,14 @@ CRAN release: 2017-11-07
 ### NEW FEATURES
 
 - Split off functions
-  [`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md),
-  [`utf8_valid()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md),
-  [`utf8_normalize()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_normalize.md),
-  [`utf8_encode()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_encode.md),
-  [`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md),
-  [`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md),
+  [`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md),
+  [`utf8_valid()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md),
+  [`utf8_normalize()`](https://krlmlr.github.io/utf8/dev/reference/utf8_normalize.md),
+  [`utf8_encode()`](https://krlmlr.github.io/utf8/dev/reference/utf8_encode.md),
+  [`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md),
+  [`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md),
   and
-  [`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md)
+  [`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md)
   from [corpus](http://corpustext.com/ "corpus: Text Corpus Analysis")
   package.
 
@@ -447,4 +475,4 @@ CRAN release: 2017-11-07
 - Added ANSI styling to escape sequences.
 
 - Added ability to style row and column names in
-  [`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md).
+  [`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md).

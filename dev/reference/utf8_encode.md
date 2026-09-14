@@ -58,7 +58,7 @@ utf8_encode(
   logical scalar indicating whether to encode for a UTF-8 capable
   display (ASCII-only otherwise), or `NULL` to encode for output
   capabilities as determined by
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md).
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md).
 
 ## Value
 
@@ -73,13 +73,13 @@ characters. When `display = TRUE`, the function optimizes the encoding
 for display by removing default ignorable characters (soft hyphens,
 zero-width spaces, etc.) and placing zero-width spaces after wide emoji.
 When
-[`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+[`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
 is `FALSE` the function escapes all non-ASCII characters and gives the
 same results on all platforms.
 
 ## See also
 
-[`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md).
+[`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md).
 
 ## Examples
 

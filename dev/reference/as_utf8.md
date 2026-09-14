@@ -39,7 +39,7 @@ For `utf8_valid()` a logical object with the same `names`, `dim`, and
 
 ## See also
 
-[`utf8_normalize()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_normalize.md),
+[`utf8_normalize()`](https://krlmlr.github.io/utf8/dev/reference/utf8_normalize.md),
 [`iconv()`](https://rdrr.io/r/base/iconv.html).
 
 ## Examples

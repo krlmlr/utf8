@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">utf8</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9021</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9022</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,6 +54,27 @@
 
 <p><em>utf8</em> is an R package for manipulating and printing UTF-8 text that fixes multiple bugs in R’s UTF-8 handling.</p>
 <div class="section level2">
+<h2 id="goals-and-non-goals">Goals and non-goals<a class="anchor" aria-label="anchor" href="#goals-and-non-goals"></a>
+</h2>
+<p><em>utf8</em> aims to:</p>
+<ul>
+<li>convert character data to UTF-8 from the encoding declared on it, and fail loudly when that declaration turns out to be wrong</li>
+<li>normalize text to Unicode composed normal form (NFC), optionally case-folding it or applying the compatibility maps for NFKC</li>
+<li>measure and format text by display width, counting wide characters such as emoji as two columns and combining marks as none</li>
+<li>print UTF-8 text, emoji included, where R’s own <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> escapes it, and report what the output connection can actually display with <code><a href="reference/output_utf8.html">output_utf8()</a></code> and <code><a href="reference/output_utf8.html">output_ansi()</a></code>
+</li>
+<li>install everywhere, with no package dependencies beyond R itself</li>
+</ul>
+<p>It is explicitly not trying to:</p>
+<ul>
+<li>guess an encoding from the bytes: <code><a href="reference/as_utf8.html">as_utf8()</a></code> converts from the declared <code><a href="https://rdrr.io/r/base/Encoding.html" class="external-link">Encoding()</a></code> and throws an error when it cannot</li>
+<li>convert text <em>out of</em> UTF-8 into some other encoding, which is what <code><a href="https://rdrr.io/r/base/iconv.html" class="external-link">iconv()</a></code> is for</li>
+<li>read or write files: every function takes a character object that is already in your R session</li>
+<li>be a text analysis package: these functions were split off from <em>corpus</em> in utf8 1.0.0, and tokenization and term statistics stayed behind</li>
+<li>model the full range of character locales: only C and UTF-8 are handled, and on Windows every non-C locale is treated as UTF-8</li>
+</ul>
+</div>
+<div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
 <div class="section level3">
@@ -68,14 +89,15 @@
 </h3>
 <p>To install the latest development version, run the following:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"patperry/r-utf8"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"krlmlr/utf8"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://krlmlr.github.io/utf8/" class="external-link">utf8</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://krlmlr.github.io/utf8/">utf8</a></span><span class="op">)</span></span></code></pre></div>
 <div class="section level3">
 <h3 id="validate-character-data-and-convert-to-utf-8">Validate character data and convert to UTF-8<a class="anchor" aria-label="anchor" href="#validate-character-data-and-convert-to-utf-8"></a>
 </h3>
@@ -85,7 +107,8 @@
 <span><span class="va">x</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"fa\u00E7ile"</span>, <span class="st">"fa\xE7ile"</span>, <span class="st">"fa\xC3\xA7ile"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Encoding.html" class="external-link">Encoding</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"UTF-8"</span>, <span class="st">"UTF-8"</span>, <span class="st">"bytes"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="reference/as_utf8.html">as_utf8</a></span><span class="op">(</span><span class="va">x</span><span class="op">)</span> <span class="co"># fails</span></span>
-<span><span class="co">#&gt; Error in as_utf8(x): entry 2 has wrong Encoding; marked as "UTF-8" but leading byte 0xE7 followed by invalid continuation byte (0xdeadbeef) at position 4</span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00; font-weight: bold;">Error</span><span style="font-weight: bold;"> in `as_utf8()`:</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BBBB00;">!</span> entry 2 has wrong Encoding; marked as "UTF-8" but leading byte 0xE7 followed by invalid continuation byte (0xdeadbeef) at position 4</span></span>
 <span></span>
 <span><span class="co"># mark the correct encoding</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Encoding.html" class="external-link">Encoding</a></span><span class="op">(</span><span class="va">x</span><span class="op">[</span><span class="fl">2</span><span class="op">]</span><span class="op">)</span> <span class="op">&lt;-</span> <span class="st">"latin1"</span></span>
@@ -132,23 +155,12 @@
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
 <p>Cite <em>utf8</em> with the following BibTeX entry:</p>
-<pre><code>@Manual{,
-  title = {utf8: Unicode Text Processing},
-  author = {Patrick O. Perry},
-  note = {R package version 1.2.4.9900, https://github.com/patperry/r-utf8},
-  url = {https://ptrckprry.com/r-utf8/},
-}</code></pre>
-</div>
-<div class="section level2">
-<h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
-</h2>
-<p>The project maintainer welcomes contributions in the form of feature requests, bug reports, comments, unit tests, vignettes, or other code. If you’d like to contribute, either</p>
-<ul>
-<li><p>fork the repository and submit a pull request</p></li>
-<li><p><a href="https://github.com/patperry/r-utf8/issues" title="Issues" class="external-link">file an issue</a>;</p></li>
-<li><p>or contact the maintainer via e-mail.</p></li>
-</ul>
-<p>This project is released with a <a href="https://github.com/patperry/r-utf8/blob/main/CONDUCT.md" title="Contributor Code of Conduct" class="external-link">Contributor Code of Conduct</a>, and if you choose to contribute, you must adhere to its terms.</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode R"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="sc">@</span>Manual{,</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a>  title <span class="ot">=</span> {utf8<span class="sc">:</span> Unicode Text Processing},</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a>  author <span class="ot">=</span> {Patrick O. Perry},</span>
+<span id="cb7-4"><a href="#cb7-4" tabindex="-1"></a>  note <span class="ot">=</span> {R package version <span class="dv">1</span>.<span class="fl">2.6</span>},</span>
+<span id="cb7-5"><a href="#cb7-5" tabindex="-1"></a>  url <span class="ot">=</span> {https<span class="sc">:</span><span class="er">//</span>krlmlr.github.io<span class="sc">/</span>utf8<span class="sc">/</span>},</span>
+<span id="cb7-6"><a href="#cb7-6" tabindex="-1"></a>}</span></code></pre></div>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -189,8 +201,8 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
-<li><a href="https://github.com/patperry/r-utf8/actions" class="external-link"><img src="https://github.com/patperry/r-utf8/workflows/rcc/badge.svg" alt="rcc"></a></li>
-<li><a href="https://app.codecov.io/github/patperry/r-utf8?branch=main" title="Code Coverage" class="external-link"><img src="https://codecov.io/github/patperry/r-utf8/coverage.svg?branch=main" title="Code Coverage" alt="Coverage Status"></a></li>
+<li><a href="https://github.com/krlmlr/utf8/actions" class="external-link"><img src="https://github.com/krlmlr/utf8/workflows/rcc/badge.svg" alt="rcc"></a></li>
+<li><a href="https://app.codecov.io/gh/krlmlr/utf8/tree/main" title="Code Coverage" class="external-link"><img src="https://codecov.io/gh/krlmlr/utf8/graph/badge.svg" title="Code Coverage" alt="Coverage Status"></a></li>
 <li><a href="https://cran.r-project.org/package=utf8" title="CRAN Page" class="external-link"><img src="https://www.r-pkg.org/badges/version/utf8" title="CRAN Page" alt="CRAN Status"></a></li>
 <li><a href="https://www.apache.org/licenses/LICENSE-2.0.html" title="Apache License, Version 2.0" class="external-link"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg" title="Apache License, Version 2.0" alt="License"></a></li>
 <li><a href="https://cran.r-project.org/package=utf8" title="CRAN Page" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/utf8" title="CRAN Downloads" alt="CRAN RStudio Mirror Downloads"></a></li>

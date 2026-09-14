@@ -91,16 +91,16 @@ utf8_print(
 
   logical scalar indicating whether to apply ANSI terminal escape codes
   to style the output. Ignored when
-  [`output_ansi()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+  [`output_ansi()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
   is `FALSE`.
 
 - utf8:
 
   logical scalar indicating whether to optimize results for a UTF-8
   capable display, or `NULL` to set as the result of
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md).
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md).
   Ignored when
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
   is `FALSE`.
 
 ## Value
@@ -110,17 +110,17 @@ The function returns `x` invisibly.
 ## Details
 
 `utf8_print()` prints a character object after formatting it with
-[`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md).
+[`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md).
 
 For ANSI terminal output (when
-[`output_ansi()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md)
+[`output_ansi()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
 is `TRUE`), you can style the row and column names with the `rownames`
 and `names` parameters, specifying an ANSI SGR parameter string; see
 <https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters>.
 
 ## See also
 
-[`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md).
+[`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md).
 
 ## Examples
 

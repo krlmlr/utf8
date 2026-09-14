@@ -79,7 +79,7 @@ utf8_format(
   logical scalar indicating whether to format for a UTF-8 capable
   display (ASCII-only otherwise), or `NULL` to format for output
   capabilities as determined by
-  [`output_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/output_utf8.md).
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md).
 
 ## Value
 
@@ -94,8 +94,8 @@ truncating long character strings.
 
 ## See also
 
-[`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md),
-[`utf8_encode()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_encode.md).
+[`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md),
+[`utf8_encode()`](https://krlmlr.github.io/utf8/dev/reference/utf8_encode.md).
 
 ## Examples
 

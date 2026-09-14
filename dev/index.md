@@ -3,6 +3,41 @@
 *utf8* is an R package for manipulating and printing UTF-8 text that
 fixes multiple bugs in R’s UTF-8 handling.
 
+## Goals and non-goals
+
+*utf8* aims to:
+
+- convert character data to UTF-8 from the encoding declared on it, and
+  fail loudly when that declaration turns out to be wrong
+- normalize text to Unicode composed normal form (NFC), optionally
+  case-folding it or applying the compatibility maps for NFKC
+- measure and format text by display width, counting wide characters
+  such as emoji as two columns and combining marks as none
+- print UTF-8 text, emoji included, where R’s own
+  [`print()`](https://rdrr.io/r/base/print.html) escapes it, and report
+  what the output connection can actually display with
+  [`output_utf8()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
+  and
+  [`output_ansi()`](https://krlmlr.github.io/utf8/dev/reference/output_utf8.md)
+- install everywhere, with no package dependencies beyond R itself
+
+It is explicitly not trying to:
+
+- guess an encoding from the bytes:
+  [`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md)
+  converts from the declared
+  [`Encoding()`](https://rdrr.io/r/base/Encoding.html) and throws an
+  error when it cannot
+- convert text *out of* UTF-8 into some other encoding, which is what
+  [`iconv()`](https://rdrr.io/r/base/iconv.html) is for
+- read or write files: every function takes a character object that is
+  already in your R session
+- be a text analysis package: these functions were split off from
+  *corpus* in utf8 1.0.0, and tokenization and term statistics stayed
+  behind
+- model the full range of character locales: only C and UTF-8 are
+  handled, and on Windows every non-C locale is treated as UTF-8
+
 ## Installation
 
 ### Stable version
@@ -22,7 +57,8 @@ To install the latest development version, run the following:
 
 ``` r
 
-devtools::install_github("patperry/r-utf8")
+# install.packages("pak")
+pak::pak("krlmlr/utf8")
 ```
 
 ## Usage
@@ -35,9 +71,9 @@ library(utf8)
 ### Validate character data and convert to UTF-8
 
 Use
-[`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md)
-to validate input text and convert to UTF-8 encoding. The function
-alerts you if the input text has the wrong declared encoding:
+[`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md) to
+validate input text and convert to UTF-8 encoding. The function alerts
+you if the input text has the wrong declared encoding:
 
 ``` r
 
@@ -45,7 +81,8 @@ alerts you if the input text has the wrong declared encoding:
 x <- c("fa\u00E7ile", "fa\xE7ile", "fa\xC3\xA7ile")
 Encoding(x) <- c("UTF-8", "UTF-8", "bytes")
 as_utf8(x) # fails
-#> Error in as_utf8(x): entry 2 has wrong Encoding; marked as "UTF-8" but leading byte 0xE7 followed by invalid continuation byte (0xdeadbeef) at position 4
+#> Error in `as_utf8()`:
+#> ! entry 2 has wrong Encoding; marked as "UTF-8" but leading byte 0xE7 followed by invalid continuation byte (0xdeadbeef) at position 4
 
 # mark the correct encoding
 Encoding(x[2]) <- "latin1"
@@ -56,7 +93,7 @@ as_utf8(x) # succeeds
 ### Normalize data
 
 Use
-[`utf8_normalize()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_normalize.md)
+[`utf8_normalize()`](https://krlmlr.github.io/utf8/dev/reference/utf8_normalize.md)
 to convert to Unicode composed normal form (NFC). Optionally apply
 compatibility maps for NFKC normal form or case-fold.
 
@@ -84,7 +121,7 @@ utf8_normalize("𝖸𝗈 𝐔𝐧𝐢𝐜𝐨𝐝𝐞 𝗅 𝗁𝖾𝗋𝖽 𝕌
 On some platforms (including MacOS), the R implementation of
 [`print()`](https://rdrr.io/r/base/print.html) uses an outdated version
 of the Unicode standard to determine which characters are printable. Use
-[`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md)
+[`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md)
 for an updated print function:
 
 ``` r
@@ -103,25 +140,11 @@ utf8_print(intToUtf8(0xdeadbeefF600 + 0:79), chars = 1000) # higher character li
 
 Cite *utf8* with the following BibTeX entry:
 
-    @Manual{,
-      title = {utf8: Unicode Text Processing},
-      author = {Patrick O. Perry},
-      note = {R package version 1.2.4.9900, https://github.com/patperry/r-utf8},
-      url = {https://ptrckprry.com/r-utf8/},
-    }
-
-## Contributing
-
-The project maintainer welcomes contributions in the form of feature
-requests, bug reports, comments, unit tests, vignettes, or other code.
-If you’d like to contribute, either
-
-- fork the repository and submit a pull request
-
-- [file an issue](https://github.com/patperry/r-utf8/issues "Issues");
-
-- or contact the maintainer via e-mail.
-
-This project is released with a [Contributor Code of
-Conduct](https://github.com/patperry/r-utf8/blob/main/CONDUCT.md "Contributor Code of Conduct"),
-and if you choose to contribute, you must adhere to its terms.
+``` R
+@Manual{,
+  title = {utf8: Unicode Text Processing},
+  author = {Patrick O. Perry},
+  note = {R package version 1.2.6},
+  url = {https://krlmlr.github.io/utf8/},
+}
+```

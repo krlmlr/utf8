@@ -7,7 +7,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">utf8</a>
 
-    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9021</small>
+    <small class="nav-text text-danger me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="In-development version">1.2.6.9022</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,72 +71,63 @@
 
 
 <dt id="arg-chars">chars<a class="anchor" aria-label="anchor" href="#arg-chars"></a></dt>
-<dd><p>integer scalar indicating the maximum number of character units
-to display.  Wide characters like emoji take two character units; combining
-marks and default ignorables take none. Longer strings get truncated and
-suffixed or prefixed with an ellipsis (<code>"..."</code> in C locale,
-<code>"\u2026"</code> in others). Set to <code>NULL</code> to limit output to the line
-width as determined by <code>getOption("width")</code>.</p></dd>
+<dd><p>integer scalar indicating the maximum number of character units to display.
+Wide characters like emoji take two character units;
+combining marks and default ignorables take none.
+Longer strings get truncated and suffixed or prefixed with an ellipsis (<code>"..."</code> in C locale, <code>"\u2026"</code> in others).
+Set to <code>NULL</code> to limit output to the line width as determined by <code>getOption("width")</code>.</p></dd>
 
 
 <dt id="arg-quote">quote<a class="anchor" aria-label="anchor" href="#arg-quote"></a></dt>
-<dd><p>logical scalar indicating whether to put surrounding
-double-quotes (<code>'"'</code>) around character strings and escape internal
-double-quotes.</p></dd>
+<dd><p>logical scalar indicating whether to put surrounding double-quotes (<code>'"'</code>) around character strings
+and escape internal double-quotes.</p></dd>
 
 
 <dt id="arg-na-print">na.print<a class="anchor" aria-label="anchor" href="#arg-na-print"></a></dt>
-<dd><p>character string (or <code>NULL</code>) indicating the encoding
-for <code>NA</code> values. Ignored when <code>na.encode</code> is <code>FALSE</code>.</p></dd>
+<dd><p>character string (or <code>NULL</code>) indicating the encoding for <code>NA</code> values.
+Ignored when <code>na.encode</code> is <code>FALSE</code>.</p></dd>
 
 
 <dt id="arg-print-gap">print.gap<a class="anchor" aria-label="anchor" href="#arg-print-gap"></a></dt>
-<dd><p>non-negative integer (or <code>NULL</code>) giving the number of
-spaces in gaps between columns; set to <code>NULL</code> or <code>1</code> for a single
-space.</p></dd>
+<dd><p>non-negative integer (or <code>NULL</code>) giving the number of spaces in gaps between columns;
+set to <code>NULL</code> or <code>1</code> for a single space.</p></dd>
 
 
 <dt id="arg-right">right<a class="anchor" aria-label="anchor" href="#arg-right"></a></dt>
-<dd><p>logical scalar indicating whether to right-justify character
-strings.</p></dd>
+<dd><p>logical scalar indicating whether to right-justify character strings.</p></dd>
 
 
 <dt id="arg-max">max<a class="anchor" aria-label="anchor" href="#arg-max"></a></dt>
-<dd><p>non-negative integer (or <code>NULL</code>) indicating the maximum
-number of elements to print; set to <code>getOption("max.print")</code> if
-argument is <code>NULL</code>.</p></dd>
+<dd><p>non-negative integer (or <code>NULL</code>) indicating the maximum number of elements to print;
+set to <code>getOption("max.print")</code> if argument is <code>NULL</code>.</p></dd>
 
 
 <dt id="arg-names">names<a class="anchor" aria-label="anchor" href="#arg-names"></a></dt>
-<dd><p>a character string specifying the display style for the
-(column) names, as an ANSI SGR parameter string.</p></dd>
+<dd><p>a character string specifying the display style for the (column) names, as an ANSI SGR parameter string.</p></dd>
 
 
 <dt id="arg-rownames">rownames<a class="anchor" aria-label="anchor" href="#arg-rownames"></a></dt>
-<dd><p>a character string specifying the display style for the row
-names, as an ANSI SGR parameter string.</p></dd>
+<dd><p>a character string specifying the display style for the row names, as an ANSI SGR parameter string.</p></dd>
 
 
 <dt id="arg-escapes">escapes<a class="anchor" aria-label="anchor" href="#arg-escapes"></a></dt>
-<dd><p>a character string specifying the display style for the
-backslash escapes, as an ANSI SGR parameter string.</p></dd>
+<dd><p>a character string specifying the display style for the backslash escapes, as an ANSI SGR parameter string.</p></dd>
 
 
 <dt id="arg-display">display<a class="anchor" aria-label="anchor" href="#arg-display"></a></dt>
-<dd><p>logical scalar indicating whether to optimize the encoding
-for display, not byte-for-byte data transmission.</p></dd>
+<dd><p>logical scalar indicating whether to optimize the encoding for display, not byte-for-byte data transmission.</p></dd>
 
 
 <dt id="arg-style">style<a class="anchor" aria-label="anchor" href="#arg-style"></a></dt>
-<dd><p>logical scalar indicating whether to apply ANSI terminal escape
-codes to style the output.  Ignored when <code><a href="output_utf8.html">output_ansi()</a></code> is
-<code>FALSE</code>.</p></dd>
+<dd><p>logical scalar indicating whether to apply ANSI terminal escape codes
+to style the output.
+Ignored when <code><a href="output_utf8.html">output_ansi()</a></code> is <code>FALSE</code>.</p></dd>
 
 
 <dt id="arg-utf-">utf8<a class="anchor" aria-label="anchor" href="#arg-utf-"></a></dt>
-<dd><p>logical scalar indicating whether to optimize results for a
-UTF-8 capable display, or <code>NULL</code> to set as the result of
-<code><a href="output_utf8.html">output_utf8()</a></code>. Ignored when <code><a href="output_utf8.html">output_utf8()</a></code> is <code>FALSE</code>.</p></dd>
+<dd><p>logical scalar indicating whether to optimize results for a UTF-8 capable display,
+or <code>NULL</code> to set as the result of <code><a href="output_utf8.html">output_utf8()</a></code>.
+Ignored when <code><a href="output_utf8.html">output_utf8()</a></code> is <code>FALSE</code>.</p></dd>
 
 </dl></div>
     <div class="section level2">
@@ -145,12 +136,10 @@ UTF-8 capable display, or <code>NULL</code> to set as the result of
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><code>utf8_print()</code> prints a character object after formatting it with
-<code><a href="utf8_format.html">utf8_format()</a></code>.</p>
-<p>For ANSI terminal output (when <code><a href="output_utf8.html">output_ansi()</a></code> is <code>TRUE</code>), you can
-style the row and column names with the <code>rownames</code> and <code>names</code>
-parameters, specifying an ANSI SGR parameter string; see
-<a href="https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters" class="external-link">https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters</a>.</p>
+    <p><code>utf8_print()</code> prints a character object after formatting it with <code><a href="utf8_format.html">utf8_format()</a></code>.</p>
+<p>For ANSI terminal output (when <code><a href="output_utf8.html">output_ansi()</a></code> is <code>TRUE</code>),
+you can style the row and column names with the <code>rownames</code> and <code>names</code> parameters, specifying an ANSI SGR parameter string;
+see <a href="https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters" class="external-link">https://en.wikipedia.org/wiki/ANSI_escape_code#SGR_(Select_Graphic_Rendition)_parameters</a>.</p>
     </div>
     <div class="section level2">
     <h2 id="see-also">See also<a class="anchor" aria-label="anchor" href="#see-also"></a></h2>

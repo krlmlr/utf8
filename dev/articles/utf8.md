@@ -306,30 +306,30 @@ supported on Windows.)
 The *utf8* package provides the following utilities for validating,
 formatting, and printing UTF-8 characters:
 
-- [`as_utf8()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md)
+- [`as_utf8()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md)
   attempts to convert character data to UTF-8, throwing an error if the
   data is invalid;
 
-- [`utf8_valid()`](https://krlmlr.github.io/r-utf8/dev/reference/as_utf8.md)
+- [`utf8_valid()`](https://krlmlr.github.io/utf8/dev/reference/as_utf8.md)
   tests whether character data is valid according to its declared
   encoding;
 
-- [`utf8_normalize()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_normalize.md)
+- [`utf8_normalize()`](https://krlmlr.github.io/utf8/dev/reference/utf8_normalize.md)
   converts text to Unicode composed normal form (NFC), optionally
   applying case-folding and compatibility maps;
 
-- [`utf8_encode()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_encode.md)
+- [`utf8_encode()`](https://krlmlr.github.io/utf8/dev/reference/utf8_encode.md)
   encodes a character string, escaping all control characters, so that
   it can be safely printed to the screen;
 
-- [`utf8_format()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_format.md)
+- [`utf8_format()`](https://krlmlr.github.io/utf8/dev/reference/utf8_format.md)
   formats a character vector by truncating to a specified character
   width limit or by left, right, or center justifying;
 
-- [`utf8_print()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_print.md)
+- [`utf8_print()`](https://krlmlr.github.io/utf8/dev/reference/utf8_print.md)
   prints UTF-8 character data to the screen;
 
-- [`utf8_width()`](https://krlmlr.github.io/r-utf8/dev/reference/utf8_width.md)
+- [`utf8_width()`](https://krlmlr.github.io/utf8/dev/reference/utf8_width.md)
   measures the display with of UTF-8 character strings (many emoji and
   East Asian characters are twice as wide as other characters).
 
