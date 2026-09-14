@@ -44,7 +44,7 @@ local({
 # utf8
 
 <!-- badges: start -->
-[![rcc](https://github.com/patperry/r-utf8/workflows/rcc/badge.svg)](https://github.com/krlmlr/utf8/actions)
+[![rcc](https://github.com/krlmlr/utf8/workflows/rcc/badge.svg)](https://github.com/krlmlr/utf8/actions)
 [![Coverage Status][codecov-badge]][codecov]
 [![CRAN Status][cran-badge]][cran]
 [![License][apache-badge]][apache]
@@ -167,8 +167,8 @@ and if you choose to contribute, you must adhere to its terms.
 [apache]: https://www.apache.org/licenses/LICENSE-2.0.html "Apache License, Version 2.0"
 [apache-badge]: https://img.shields.io/badge/License-Apache%202.0-blue.svg "Apache License, Version 2.0"
 [building]: #development-version "Building from Source"
-[codecov]: https://app.codecov.io/github/patperry/r-utf8?branch=main "Code Coverage"
-[codecov-badge]: https://codecov.io/github/patperry/r-utf8/coverage.svg?branch=main "Code Coverage"
+[codecov]: https://app.codecov.io/gh/krlmlr/utf8/tree/main "Code Coverage"
+[codecov-badge]: https://codecov.io/gh/krlmlr/utf8/graph/badge.svg "Code Coverage"
 [conduct]: https://github.com/krlmlr/utf8/blob/main/CONDUCT.md "Contributor Code of Conduct"
 [cran]: https://cran.r-project.org/package=utf8 "CRAN Page"
 [cran-badge]: https://www.r-pkg.org/badges/version/utf8 "CRAN Page"
