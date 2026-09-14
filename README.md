@@ -53,7 +53,7 @@ To install the latest development version, run the following:
 
 ``` r
 # install.packages("pak")
-pak::pak("patperry/r-utf8")
+pak::pak("krlmlr/utf8")
 ```
 
 ## Usage
