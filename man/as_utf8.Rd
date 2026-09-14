@@ -12,26 +12,21 @@ utf8_valid(x)
 \arguments{
 \item{x}{character object.}
 
-\item{normalize}{a logical value indicating whether to convert to Unicode
-composed normal form (NFC).}
+\item{normalize}{a logical value indicating whether to convert to Unicode composed normal form (NFC).}
 }
 \value{
-For \code{as_utf8()}, the result is a character object with the same
-attributes as \code{x} but with \code{Encoding} set to \code{"UTF-8"}.
+For \code{as_utf8()}, the result is a character object with the same attributes as \code{x} but with \code{Encoding} set to \code{"UTF-8"}.
 
-For \code{utf8_valid()} a logical object with the same \code{names},
-\code{dim}, and \code{dimnames} as \code{x}.
+For \code{utf8_valid()} a logical object with the same \code{names}, \code{dim}, and \code{dimnames} as \code{x}.
 }
 \description{
 UTF-8 text encoding and validation
 
-\code{as_utf8()} converts a character object from its declared encoding to a
-valid UTF-8 character object, or throws an error if no conversion is
-possible. If \code{normalize = TRUE}, then the text gets transformed to
-Unicode composed normal form (NFC) after conversion to UTF-8.
+\code{as_utf8()} converts a character object from its declared encoding to a valid UTF-8 character object,
+or throws an error if no conversion is possible.
+If \code{normalize = TRUE}, then the text gets transformed to Unicode composed normal form (NFC) after conversion to UTF-8.
 
-\code{utf8_valid()} tests whether the elements of a character object can be
-translated to valid UTF-8 strings.
+\code{utf8_valid()} tests whether the elements of a character object can be translated to valid UTF-8 strings.
 }
 \examples{
 

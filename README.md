@@ -18,8 +18,8 @@
 
 ### Stable version
 
-*utf8* is [available on CRAN](https://cran.r-project.org/package=utf8 "CRAN Page"). To install the latest released version,
-run the following command in R:
+*utf8* is [available on CRAN](https://cran.r-project.org/package=utf8 "CRAN Page").
+To install the latest released version, run the following command in R:
 
 ``` r
 install.packages("utf8")
@@ -42,8 +42,8 @@ library(utf8)
 
 ### Validate character data and convert to UTF-8
 
-Use `as_utf8()` to validate input text and convert to UTF-8 encoding. The
-function alerts you if the input text has the wrong declared encoding:
+Use `as_utf8()` to validate input text and convert to UTF-8 encoding.
+The function alerts you if the input text has the wrong declared encoding:
 
 ``` r
 # second entry is encoded in latin-1, but declared as UTF-8
@@ -84,9 +84,9 @@ utf8_normalize("𝖸𝗈 𝐔𝐧𝐢𝐜𝐨𝐝𝐞 𝗅 𝗁𝖾𝗋𝖽 𝕌
 
 ### Print emoji
 
-On some platforms (including MacOS), the R implementation of `print()` uses an
-outdated version of the Unicode standard to determine which characters are
-printable. Use `utf8_print()` for an updated print function:
+On some platforms (including MacOS),
+the R implementation of `print()` uses an outdated version of the Unicode standard to determine which characters are printable.
+Use `utf8_print()` for an updated print function:
 
 ``` r
 print(intToUtf8(0xdeadbeefF600 + 0:79)) # with default R print function
@@ -114,9 +114,8 @@ Cite *utf8* with the following BibTeX entry:
 
 ## Contributing
 
-The project maintainer welcomes contributions in the form of feature requests,
-bug reports, comments, unit tests, vignettes, or other code. If you'd like to
-contribute, either
+The project maintainer welcomes contributions in the form of feature requests, bug reports, comments, unit tests, vignettes, or other code.
+If you'd like to contribute, either
 
 - fork the repository and submit a pull request
 

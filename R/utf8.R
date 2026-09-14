@@ -19,23 +19,18 @@
 #' @description
 #' UTF-8 text encoding and validation
 #'
-#' `as_utf8()` converts a character object from its declared encoding to a
-#' valid UTF-8 character object, or throws an error if no conversion is
-#' possible. If `normalize = TRUE`, then the text gets transformed to
-#' Unicode composed normal form (NFC) after conversion to UTF-8.
+#' `as_utf8()` converts a character object from its declared encoding to a valid UTF-8 character object,
+#' or throws an error if no conversion is possible.
+#' If `normalize = TRUE`, then the text gets transformed to Unicode composed normal form (NFC) after conversion to UTF-8.
 #'
-#' `utf8_valid()` tests whether the elements of a character object can be
-#' translated to valid UTF-8 strings.
+#' `utf8_valid()` tests whether the elements of a character object can be translated to valid UTF-8 strings.
 #'
 #' @aliases as_utf8 utf8_valid
 #' @param x character object.
-#' @param normalize a logical value indicating whether to convert to Unicode
-#'   composed normal form (NFC).
-#' @return For `as_utf8()`, the result is a character object with the same
-#'   attributes as `x` but with `Encoding` set to `"UTF-8"`.
+#' @param normalize a logical value indicating whether to convert to Unicode composed normal form (NFC).
+#' @return For `as_utf8()`, the result is a character object with the same attributes as `x` but with `Encoding` set to `"UTF-8"`.
 #'
-#'   For `utf8_valid()` a logical object with the same `names`,
-#'   `dim`, and `dimnames` as `x`.
+#'   For `utf8_valid()` a logical object with the same `names`, `dim`, and `dimnames` as `x`.
 #' @seealso [utf8_normalize()], [iconv()].
 #' @examples
 #'
@@ -75,24 +70,19 @@ utf8_valid <- function(x) {
 #'
 #' Compute the display widths of the elements of a character object.
 #'
-#' `utf8_width()` returns the printed widths of the elements of a character
-#' object on a UTF-8 device (or on an ASCII device when `output_utf8()` is
-#' `FALSE`), when printed with `utf8_print()`. If the string is not
-#' printable on the device, for example if it contains a control code like
-#' `"\n"`, then the result is `NA`. If `encode = TRUE`, the
-#' default, then the function returns the widths of the encoded elements via
-#' `utf8_encode()`); otherwise, the function returns the widths of the
-#' original elements.
+#' `utf8_width()` returns the printed widths of the elements of a character object on a UTF-8 device
+#' (or on an ASCII device when `output_utf8()` is `FALSE`), when printed with `utf8_print()`.
+#' If the string is not printable on the device, for example if it contains a control code like `"\n"`, then the result is `NA`.
+#' If `encode = TRUE`, the default, then the function returns the widths of the encoded elements via `utf8_encode()`);
+#' otherwise, the function returns the widths of the original elements.
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
 #' @param encode whether to encode the object before measuring its width.
 #' @param quote whether to quote the object before measuring its width.
-#' @param utf8 logical scalar indicating whether to determine widths assuming a
-#'   UTF-8 capable display (ASCII-only otherwise), or `NULL` to format for
-#'   output capabilities as determined by `output_utf8()`.
-#' @return An integer object, with the same `names`, `dim`, and
-#'   `dimnames` as `x`.
+#' @param utf8 logical scalar indicating whether to determine widths assuming a UTF-8 capable display (ASCII-only otherwise),
+#'   or `NULL` to format for output capabilities as determined by `output_utf8()`.
+#' @return An integer object, with the same `names`, `dim`, and `dimnames` as `x`.
 #' @seealso [utf8_print()].
 #' @examples
 #'
@@ -128,28 +118,22 @@ utf8_width <- function(
 
 #' Text Normalization
 #'
-#' Transform text to normalized form, optionally mapping to lowercase and
-#' applying compatibility maps.
+#' Transform text to normalized form, optionally mapping to lowercase and applying compatibility maps.
 #'
-#' `utf8_normalize()` converts the elements of a character object to Unicode
-#' normalized composed form (NFC) while applying the character maps specified
-#' by the `map_case`, `map_compat`, `map_quote`, and
-#' `remove_ignorable` arguments.
+#' `utf8_normalize()` converts the elements of a character object to Unicode normalized composed form (NFC)
+#' while applying the character maps specified by the `map_case`, `map_compat`, `map_quote`, and `remove_ignorable` arguments.
 #'
 #' @inheritParams rlang::args_dots_empty
 #' @param x character object.
-#' @param map_case a logical value indicating whether to apply Unicode case
-#'   mapping to the text. For most languages, this transformation changes
-#'   uppercase characters to their lowercase equivalents.
-#' @param map_compat a logical value indicating whether to apply Unicode
-#'   compatibility mappings to the characters, those required for NFKC and NFKD
-#'   normal forms.
-#' @param map_quote a logical value indicating whether to replace curly single
-#'   quotes and Unicode apostrophe characters with ASCII apostrophe (U+0027).
-#' @param remove_ignorable a logical value indicating whether to remove Unicode
-#'   "default ignorable" characters like zero-width spaces and soft hyphens.
-#' @return The result is a character object with the same attributes as
-#'   `x` but with `Encoding` set to `"UTF-8"`.
+#' @param map_case a logical value indicating whether to apply Unicode case mapping to the text.
+#'   For most languages, this transformation changes uppercase characters to their lowercase equivalents.
+#' @param map_compat a logical value indicating whether to apply Unicode compatibility mappings to the characters,
+#'   those required for NFKC and NFKD normal forms.
+#' @param map_quote a logical value indicating whether to replace curly single quotes and Unicode apostrophe characters
+#'   with ASCII apostrophe (U+0027).
+#' @param remove_ignorable a logical value indicating whether to remove Unicode "default ignorable" characters
+#'   like zero-width spaces and soft hyphens.
+#' @return The result is a character object with the same attributes as `x` but with `Encoding` set to `"UTF-8"`.
 #' @seealso [as_utf8()].
 #' @examples
 #'
