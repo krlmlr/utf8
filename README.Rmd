@@ -1,7 +1,5 @@
 ---
-output:
-  github_document:
-    html_preview: false
+output: cynkratemplate::readme_document
 ---
 
 <!-- README.md and index.md are generated from README.Rmd. Please edit that file. -->
@@ -23,12 +21,6 @@ clean_output <- function(x, options) {
   x <- gsub("dataframe_[0-9]*_[0-9]*", "      dataframe_42_42      ", x)
   x <- gsub("[0-9]*\\.___row_number ASC", "42.___row_number ASC", x)
 
-  index <- x
-  index <- gsub("─", "-", index)
-  index <- strsplit(paste(index, collapse = "\n"), "\n---\n")[[1]][[2]]
-  writeLines(index, "index.md")
-
-  x <- fansi::strip_sgr(x)
   x
 }
 
@@ -36,7 +28,10 @@ options(
   cli.num_colors = 256,
   cli.width = 80,
   width = 80,
-  pillar.bold = TRUE
+  pillar.bold = TRUE,
+  pillar.min_title_chars = 5,
+  pillar.max_title_chars = 5,
+  pillar.max_footer_lines = 12
 )
 
 local({
@@ -142,9 +137,16 @@ utf8_print(intToUtf8(0x1F600 + 0:79), chars = 1000) # higher character limit
 Cite *utf8* with the following BibTeX entry:
 
 ```{r echo = FALSE, comment = NA}
-print(suppressWarnings(citation("utf8")), "Bibtex")
+cit <- suppressWarnings(citation("utf8"))
+# Cite the release, not whatever development build happens to be installed:
+# `citation()` takes the version from the installed package, so a `.9xxx`
+# suffix would put this environment into the rendered README.
+cit$note <- sub("^(R package version [0-9]+[.][0-9]+[.][0-9]+)[.][0-9]+$", "\\1", cit$note)
+print(cit, "Bibtex")
 ```
 
+
+---
 
 ## Contributing
 
