@@ -1,5 +1,24 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9023 (2026-09-14)
+
+## Documentation
+
+- Point the pkgdown site at this repository (#123).
+
+- Install the development version from this repository (#122).
+
+- State the goals and non-goals (#121).
+
+- Break lines at meaning boundaries (#120).
+
+- Point the badges at this repository (#118).
+
+- Harmonize README and pkgdown front page rendering (#119).
+
+- Use `pak::pak()` for the development install (#116).
+
+
 # utf8 1.2.6.9022 (2026-09-13)
 
 ## Chore
