@@ -19,7 +19,7 @@ utf8_normalize(
 \item{...}{These dots are for future extensions and must be empty.}
 
 \item{map_case}{a logical value indicating whether to apply Unicode case mapping to the text.
-For most languages, this transformation changes uppercase characters to their lowercase equivalents.}
+ For most languages, this transformation changes uppercase characters to their lowercase equivalents.}
 
 \item{map_compat}{a logical value indicating whether to apply Unicode compatibility mappings to the characters,
 those required for NFKC and NFKD normal forms.}

@@ -27,16 +27,16 @@ utf8_print(
 \item{...}{These dots are for future extensions and must be empty.}
 
 \item{chars}{integer scalar indicating the maximum number of character units to display.
-Wide characters like emoji take two character units;
+ Wide characters like emoji take two character units;
 combining marks and default ignorables take none.
-Longer strings get truncated and suffixed or prefixed with an ellipsis (\code{"..."} in C locale, \code{"\\u2026"} in others).
-Set to \code{NULL} to limit output to the line width as determined by \code{getOption("width")}.}
+ Longer strings get truncated and suffixed or prefixed with an ellipsis (\code{"..."} in C locale, \code{"\\u2026"} in others).
+ Set to \code{NULL} to limit output to the line width as determined by \code{getOption("width")}.}
 
 \item{quote}{logical scalar indicating whether to put surrounding double-quotes (\code{'"'}) around character strings
 and escape internal double-quotes.}
 
 \item{na.print}{character string (or \code{NULL}) indicating the encoding for \code{NA} values.
-Ignored when \code{na.encode} is \code{FALSE}.}
+ Ignored when \code{na.encode} is \code{FALSE}.}
 
 \item{print.gap}{non-negative integer (or \code{NULL}) giving the number of spaces in gaps between columns;
 set to \code{NULL} or \code{1} for a single space.}
@@ -56,11 +56,11 @@ set to \code{getOption("max.print")} if argument is \code{NULL}.}
 
 \item{style}{logical scalar indicating whether to apply ANSI terminal escape codes
 to style the output.
-Ignored when \code{output_ansi()} is \code{FALSE}.}
+ Ignored when \code{output_ansi()} is \code{FALSE}.}
 
 \item{utf8}{logical scalar indicating whether to optimize results for a UTF-8 capable display,
 or \code{NULL} to set as the result of \code{output_utf8()}.
-Ignored when \code{output_utf8()} is \code{FALSE}.}
+ Ignored when \code{output_utf8()} is \code{FALSE}.}
 }
 \value{
 The function returns \code{x} invisibly.
