@@ -23,14 +23,14 @@
 - normalize text to Unicode composed normal form (NFC),
   optionally case-folding it or applying the compatibility maps for NFKC
 - measure and format text by display width, counting wide characters such as emoji as two columns and combining marks as none
-- print UTF-8 text, emoji included, where R's own `print()` escapes it,
-  and report what the output connection can actually display with `output_utf8()` and `output_ansi()`
+- print UTF-8 text, emoji included, where R's own [`print()`](https://rdrr.io/r/base/print.html) escapes it,
+  and report what the output connection can actually display with [`output_utf8()`](https://krlmlr.github.io/utf8/reference/output_utf8.html) and [`output_ansi()`](https://krlmlr.github.io/utf8/reference/output_utf8.html)
 - install everywhere, with no package dependencies beyond R itself
 
 It is explicitly not trying to:
 
-- guess an encoding from the bytes: `as_utf8()` converts from the declared `Encoding()` and throws an error when it cannot
-- convert text *out of* UTF-8 into some other encoding, which is what `iconv()` is for
+- guess an encoding from the bytes: [`as_utf8()`](https://krlmlr.github.io/utf8/reference/as_utf8.html) converts from the declared [`Encoding()`](https://rdrr.io/r/base/Encoding.html) and throws an error when it cannot
+- convert text *out of* UTF-8 into some other encoding, which is what [`iconv()`](https://rdrr.io/r/base/iconv.html) is for
 - read or write files: every function takes a character object that is already in your R session
 - be a text analysis package: these functions were split off from *corpus* in utf8 1.0.0, and tokenization and term statistics stayed behind
 - model the full range of character locales: only C and UTF-8 are handled,
@@ -64,7 +64,7 @@ library(utf8)
 
 ### Validate character data and convert to UTF-8
 
-Use `as_utf8()` to validate input text and convert to UTF-8 encoding.
+Use [`as_utf8()`](https://krlmlr.github.io/utf8/reference/as_utf8.html) to validate input text and convert to UTF-8 encoding.
 The function alerts you if the input text has the wrong declared encoding:
 
 ``` r
@@ -83,7 +83,7 @@ as_utf8(x) # succeeds
 
 ### Normalize data
 
-Use `utf8_normalize()` to convert to Unicode composed normal form (NFC).
+Use [`utf8_normalize()`](https://krlmlr.github.io/utf8/reference/utf8_normalize.html) to convert to Unicode composed normal form (NFC).
 Optionally apply compatibility maps for NFKC normal form or case-fold.
 
 ``` r
@@ -107,8 +107,8 @@ utf8_normalize("𝖸𝗈 𝐔𝐧𝐢𝐜𝐨𝐝𝐞 𝗅 𝗁𝖾𝗋𝖽 𝕌
 ### Print emoji
 
 On some platforms (including MacOS),
-the R implementation of `print()` uses an outdated version of the Unicode standard to determine which characters are printable.
-Use `utf8_print()` for an updated print function:
+the R implementation of [`print()`](https://rdrr.io/r/base/print.html) uses an outdated version of the Unicode standard to determine which characters are printable.
+Use [`utf8_print()`](https://krlmlr.github.io/utf8/reference/utf8_print.html) for an updated print function:
 
 ``` r
 print(intToUtf8(0xdeadbeefF600 + 0:79)) # with default R print function
