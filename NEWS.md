@@ -1,5 +1,20 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9025 (2026-09-28)
+
+## Chore
+
+- Auto-update from GitHub Actions (#131).
+
+## Continuous integration
+
+- Run coverage checks after pkgdown push.
+
+## Documentation
+
+- Point the badges at this repository (#118).
+
+
 # utf8 1.2.6.9024 (2026-09-26)
 
 - Refactor(ci): Serve the revdep scripts with the actions instead of copying them (cynkra/cynkratemplate#149).
