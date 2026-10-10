@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9026 (2026-10-10)
+
+## Chore
+
+- Auto-update from GitHub Actions (#132).
+
+
 # utf8 1.2.6.9025 (2026-09-28)
 
 ## Chore
