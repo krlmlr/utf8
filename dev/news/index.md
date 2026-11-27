@@ -1,5 +1,12 @@
 # Changelog
 
+## utf8 1.2.6.9027 (2026-11-27)
+
+### Continuous integration
+
+- Sync the workflows with cynkra/cynkratemplate
+  ([\#134](https://github.com/krlmlr/utf8/issues/134)).
+
 ## utf8 1.2.6.9026 (2026-10-10)
 
 ### Chore
