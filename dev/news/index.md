@@ -1,5 +1,28 @@
 # Changelog
 
+## utf8 1.2.6.9026 (2026-10-10)
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#132](https://github.com/krlmlr/utf8/issues/132)).
+
+## utf8 1.2.6.9025 (2026-09-28)
+
+### Chore
+
+- Auto-update from GitHub Actions
+  ([\#131](https://github.com/krlmlr/utf8/issues/131)).
+
+### Continuous integration
+
+- Run coverage checks after pkgdown push.
+
+### Documentation
+
+- Point the badges at this repository
+  ([\#118](https://github.com/krlmlr/utf8/issues/118)).
+
 ## utf8 1.2.6.9024 (2026-09-26)
 
 - Refactor(ci): Serve the revdep scripts with the actions instead of
