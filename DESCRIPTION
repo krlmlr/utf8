@@ -1,21 +1,15 @@
 Package: utf8
 Title: Unicode Text Processing
 Version: 1.2.6.9027
-Authors@R: 
-    c(person(given = c("Patrick", "O."),
-             family = "Perry",
-             role = c("aut", "cph")),
-      person(given = "Kirill",
-             family = "M\u00fcller",
-             role = "cre",
-             email = "kirill@cynkra.com",
-             comment = c(ORCID = "0000-0002-1416-3412")),
-      person(given = "Unicode, Inc.",
-             role = c("cph", "dtc"),
-             comment = "Unicode Character Database"))
-Description: Process and print 'UTF-8' encoded international
-    text (Unicode). Input, validate, normalize, encode, format, and
-    display.
+Authors@R: c(
+    person(c("Patrick", "O."), "Perry", role = c("aut", "cph")),
+    person("Kirill", "Müller", , "kirill@cynkra.com", role = "cre",
+           comment = c(ORCID = "0000-0002-1416-3412")),
+    person("Unicode, Inc.", role = c("cph", "dtc"),
+           comment = "Unicode Character Database")
+  )
+Description: Process and print 'UTF-8' encoded international text
+    (Unicode). Input, validate, normalize, encode, format, and display.
 License: Apache License (== 2.0) | file LICENSE
 URL: https://krlmlr.github.io/utf8/, https://github.com/krlmlr/utf8
 BugReports: https://github.com/krlmlr/utf8/issues
@@ -32,7 +26,7 @@ Suggests:
 VignetteBuilder: 
     knitr,
     rmarkdown
+Config/roxygen2/version: 8.1.1.9000
 Config/testthat/edition: 3
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
-Config/roxygen2/version: 8.1.1.9000
