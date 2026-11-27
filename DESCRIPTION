@@ -1,6 +1,6 @@
 Package: utf8
 Title: Unicode Text Processing
-Version: 1.2.6.9027
+Version: 1.2.6.9028
 Authors@R: c(
     person(c("Patrick", "O."), "Perry", role = c("aut", "cph")),
     person("Kirill", "Müller", , "kirill@cynkra.com", role = "cre",
