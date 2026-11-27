@@ -1,5 +1,12 @@
 <!-- NEWS.md is maintained by https://fledge.cynkra.com, contributors should not edit this file -->
 
+# utf8 1.2.6.9027 (2026-11-27)
+
+## Continuous integration
+
+- Sync the workflows with cynkra/cynkratemplate (#134).
+
+
 # utf8 1.2.6.9026 (2026-10-10)
 
 ## Chore
